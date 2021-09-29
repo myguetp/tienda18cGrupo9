@@ -4,19 +4,19 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Tienda Genérica</title>
+<title>Tienda GenÃ©rica</title>
 <link rel="stylesheet" type="text/css" href="tiendagenerica.css">
 </head>
 <body>
-	<form id="formulario" action="comprobarusuario.jsp" method="post" name="formulario">
-		<div><h1>Bienvenidos a la Tienda Genérica</h1></div><br>
+	<form id="formulario" action="comprobarUsuario.jsp" method="post" name="formulario">
+		<div><h1>Bienvenidos a la Tienda GenÃ©rica</h1></div><br>
 		<br>
 		<div class="campos">
 			<label>Usuario: </label>
 			<input type="text" placeholder="~ Usuario ~" style="text-align: center" name="usuario" required>
 		</div>
 		<div class="campos">
-			<label>Contraseña: </label>
+			<label>ContraseÃ±a: </label>
 			<input type="password" placeholder="***********" style="text-align: center" id="pwd"  name="password" required>
 		</div>
 		<div id="botones">
