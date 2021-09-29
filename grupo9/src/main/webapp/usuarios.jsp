@@ -25,9 +25,9 @@
 				var columna5 = document.createElement("td");
 				columna5.innerHTML = item.usuario;
 				var columna6 = document.createElement("td");
-				columna6.innerHTML = "<a href ='eliminarUsuario"+item.cedulaUsuario+"'>Eliminar</a>";
+				columna6.innerHTML = "<a href ='eliminarUsuario?cedula="+item.cedulaUsuario+"'>Eliminar</a>";
 				var columna7 = document.createElement("td");
-				columna7.innerHTML = "<a href ='editarUsuario"+item.cedulaUsuario+"'>Editar</a>";
+				columna7.innerHTML = "<a href ='editarUsuario?cedula="+item.cedulaUsuario+"'>Editar</a>";
 				
 				lista.appendChild(tr);
 				tr.appendChild(columna1);
@@ -43,6 +43,7 @@
 </script>
 </head>
 <body>
+
 	<h1>Usuarios</h1>
 	<table border ="1">
 		<thead>

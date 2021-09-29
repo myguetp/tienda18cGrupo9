@@ -15,25 +15,25 @@ public class ProveedorController {
 	@RequestMapping("/registarProveedor")
 	public void registrar(ProveedorDTO proveedor) {
 		ProveedorDAO Dao = new ProveedorDAO();
-		Dao.registrar(proveedor);
+		Dao.registarProveedor(proveedor);
 	}
 	
 	@RequestMapping("/consultarProveedor")
 	public ArrayList<ProveedorDTO> consultar(int nit){
 		ProveedorDAO Dao = new ProveedorDAO();
-		return Dao.consultar(nit);
+		return Dao.consultarProveedor(nit);
 	}
 	
-	@RequestMapping("/listarProveedor")
+	@RequestMapping("/listaDeProveedores")
 	public ArrayList<ProveedorDTO> listar(){
 		ProveedorDAO Dao = new ProveedorDAO();
-		return Dao.listar();
+		return Dao.listaDeProveedores();
 	}
 	
 	@RequestMapping("/eliminarProveedor")
 	public void eliminar(int nit) {
 		ProveedorDAO Dao = new ProveedorDAO();
-		Dao.eliminar(nit);
+		Dao.eliminarProveedor(nit);
 	}
 
 

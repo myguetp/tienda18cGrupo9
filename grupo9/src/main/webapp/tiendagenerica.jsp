@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Tienda Genérica</title>
+<title>Tienda Generica</title>
 <link rel="stylesheet" type="text/css" href="tiendagenerica.css">
 </head>
 <body>
 	<form id="formulario" action="comprobarUsuario.jsp" method="post" name="formulario">
-		<div><h1>Bienvenidos a la Tienda Genérica</h1></div><br>
+		<div><h1>Bienvenidos a la Tienda Generica</h1></div><br>
 		<br>
 		<div class="campos">
 			<label>Usuario: </label>

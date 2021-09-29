@@ -12,7 +12,7 @@
 		String usuario = request.getParameter("usuario");
 		String password = request.getParameter("password");
 		
-		Class.forName("com.mysql.jdbc.Driver");
+		//Class.forName("com.mysql.jdbc.Driver");
 		Connection conexion = java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/tiendagenerica", "root", "root");
 		PreparedStatement ps = conexion.prepareStatement("SELECT * FROM usuarios WHERE usuario = ? AND password = ?");
 		ps.setString(1, usuario);

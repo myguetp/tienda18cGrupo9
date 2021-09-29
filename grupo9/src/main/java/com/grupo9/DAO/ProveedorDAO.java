@@ -12,7 +12,7 @@ import com.grupo9.DTO.ProveedorDTO;
 public class ProveedorDAO {
 	PreparedStatement preparedStatement;
 	
-	public ArrayList<ProveedorDTO> listar(){
+	public ArrayList<ProveedorDTO> listaDeProveedores(){
 		ArrayList<ProveedorDTO> miProveedor = new ArrayList<>();
 		Conexion conex = new Conexion();
 		
@@ -40,7 +40,7 @@ public class ProveedorDAO {
 		return miProveedor;
 		}
 		
-	public void registrar(ProveedorDTO proveedor) {
+	public void registarProveedor(ProveedorDTO proveedor) {
 		Conexion conex = new Conexion();
 		try {
 			Statement st = conex.getConnection().createStatement();
@@ -53,7 +53,7 @@ public class ProveedorDAO {
 			JOptionPane.showMessageDialog(null, "No se pudo registrar proveedor");
 		}
 	}
-	public ArrayList<ProveedorDTO> consultar(int nit){
+	public ArrayList<ProveedorDTO> consultarProveedor(int nit){
 		ArrayList<ProveedorDTO> miProveedor = new ArrayList<>();
 		Conexion conex = new Conexion();
 		try {
@@ -79,7 +79,7 @@ public class ProveedorDAO {
 		return miProveedor; 	
 	}
 		
-	public void eliminar(int nit) { 
+	public void eliminarProveedor(int nit) { 
 		Conexion conex = new Conexion();
 		try { 
 			String query = "DELETE FROM proveedores WHERE nit_proveedor = ?"; 
