@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.grupo9.UsuarioDAO;
-import com.grupo9.UsuarioDTO;
+import com.grupo9.DAO.UsuarioDAO;
+import com.grupo9.DTO.UsuarioDTO;
 
 @RestController
-public class UsuarioController {
+public class UsuariosController {
 	
 	@RequestMapping("/registarUsuario")
 	public void registrarUsuario(UsuarioDTO usuario) {

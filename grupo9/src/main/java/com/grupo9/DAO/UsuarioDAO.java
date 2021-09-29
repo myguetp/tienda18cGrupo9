@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import com.grupo9.UsuarioDTO;
+import com.grupo9.DTO.UsuarioDTO;
 
 public class UsuarioDAO {
 	PreparedStatement preparedStatement;
