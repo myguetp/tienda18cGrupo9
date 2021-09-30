@@ -5,6 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Clientes</title>
+<link rel="stylesheet" type="text/css" href="tiendagenerica.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 	var usuarios = $.ajax({
@@ -25,9 +26,9 @@
 				var columna5 = document.createElement("td");
 				columna5.innerHTML = item.telefonoCliente;
 				var columna6 = document.createElement("td");
-				columna6.innerHTML = "<a href ='eliminarProveedor?cedula="+item.cedulaCliente+"'>Eliminar</a>";
+				columna6.innerHTML = "<a href ='eliminarCliente?cedula="+item.cedulaCliente+"'>Eliminar</a>";
 				var columna7 = document.createElement("td");
-				columna7.innerHTML = "<a href ='editarProveedor?cedula="+item.cedulaCliente+"'>Editar</a>";
+				columna7.innerHTML = "<a href ='editarCliente?cedula="+item.cedulaCliente+"'>Editar</a>";
 				
 				lista.appendChild(tr);
 				tr.appendChild(columna1);
@@ -43,9 +44,9 @@
 </script>
 </head>
 <body>
-
-	<h1>Clientes</h1>
-	<table border ="1">
+	<jsp:include page="menu.jsp"></jsp:include><br>
+	<h1>Clientes</h1><br>
+	<table border ="1" class="centrar">
 		<thead>
 			<tr>
 				<th>Cedula</th>
@@ -61,5 +62,8 @@
 		
 		</tbody>
 	</table>
+	<br>
+	<a class="btnagregar" href = "agregarCliente.jsp">Agregar Cliente</a>
+	<a class="btnconsultar" href = "consultarCliente.jsp">Consultar Cliente</a>
 </body>
 </html>

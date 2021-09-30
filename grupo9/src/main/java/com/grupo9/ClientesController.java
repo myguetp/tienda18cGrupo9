@@ -1,8 +1,6 @@
 package com.grupo9;
 
 
-public class ClientesController {
-
 import java.util.ArrayList;
 
 import org.springframework.web.bind.annotation.RequestMapping;

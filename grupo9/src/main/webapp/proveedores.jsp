@@ -5,6 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Proveedores</title>
+<link rel="stylesheet" type="text/css" href="tiendagenerica.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 	var usuarios = $.ajax({
@@ -43,9 +44,9 @@
 </script>
 </head>
 <body>
-
-	<h1>Proveedores</h1>
-	<table border ="1">
+	<jsp:include page="menu.jsp"></jsp:include><br>
+	<h1>Proveedores</h1><br>
+	<table border ="1" class="centrar">
 		<thead>
 			<tr>
 				<th>NIT</th>
@@ -61,5 +62,8 @@
 		
 		</tbody>
 	</table>
+	<br>
+	<a class="btnagregar" href = "agregarProveedor.jsp">Agregar Proveedor</a>
+	<a class="btnconsultar" href = "consultarProveedor.jsp">Consultar Proveedor</a>
 </body>
 </html>

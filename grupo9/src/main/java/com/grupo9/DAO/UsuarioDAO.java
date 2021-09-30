@@ -43,12 +43,12 @@ public class UsuarioDAO {
 		try {
 			Statement st = conex.getConnection().createStatement();
 			st.executeUpdate("INSERT INTO usuarios VALUES ('"+usuario.getCedulaUsuario()+"', '"+usuario.getEmailUsuario()+"', '"+usuario.getNombreUsuario()+"', '"+usuario.getPassword()+"', '"+usuario.getUsuario()+"')");
-			JOptionPane.showMessageDialog(null, "Se ha registrado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+			//JOptionPane.showMessageDialog(null, "Se ha registrado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
 			st.close();
 			conex.desconectar();
 		}catch(Exception e) {
 			System.out.println(e.getMessage());
-			JOptionPane.showMessageDialog(null, "No se pudo registrar usuario");
+			//JOptionPane.showMessageDialog(null, "No se pudo registrar usuario");
 		}
 	}
 	public ArrayList<UsuarioDTO> consultarUsuario(int documento){

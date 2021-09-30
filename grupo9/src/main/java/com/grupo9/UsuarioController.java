@@ -9,9 +9,9 @@ import com.grupo9.DAO.UsuarioDAO;
 import com.grupo9.DTO.UsuarioDTO;
 
 @RestController
-public class UsuariosController {
+public class UsuarioController {
 	
-	@RequestMapping("/registarUsuario")
+	@RequestMapping("/registrarUsuario")
 	public void registrarUsuario(UsuarioDTO usuario) {
 		UsuarioDAO Dao = new UsuarioDAO();
 		Dao.registrarUsuario(usuario);
