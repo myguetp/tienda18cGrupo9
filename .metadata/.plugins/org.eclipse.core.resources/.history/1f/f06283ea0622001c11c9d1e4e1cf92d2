@@ -13,7 +13,7 @@ import com.grupo9.DTO.ClientesDTO;
 
 
 @RestController
-public class ClientesController {
+public class clientesController {
 		
 		@RequestMapping("/registrarClientes")
 		public void resgistarClientes (ClientesDTO clientes) {

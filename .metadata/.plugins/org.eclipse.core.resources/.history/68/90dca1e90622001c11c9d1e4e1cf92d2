@@ -1,8 +1,8 @@
 package com.grupo9;
 
-
+<<<<<<< HEAD
 public class ClientesController {
-
+=======
 import java.util.ArrayList;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +13,7 @@ import com.grupo9.DTO.ClientesDTO;
 
 
 @RestController
-public class ClientesController {
+public class clientesController {
 		
 		@RequestMapping("/registrarClientes")
 		public void resgistarClientes (ClientesDTO clientes) {
@@ -35,7 +35,7 @@ public class ClientesController {
 			ClientesDAO Dao=new ClientesDAO();
 			Dao.eliminarCliente(documento);
 		}
-
+>>>>>>> 697bfd10385d9b8ed157236bb596fb1b2696ff9e
 
 }
 
