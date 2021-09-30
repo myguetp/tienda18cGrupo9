@@ -5,6 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Usuarios</title>
+<link rel="stylesheet" type="text/css" href="tiendagenerica.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 	var usuarios = $.ajax({
@@ -43,15 +44,15 @@
 </script>
 </head>
 <body>
-
-	<h1>Usuarios</h1>
-	<table border ="1">
+	<jsp:include page="menu.jsp"></jsp:include><br>
+	<h1>Usuarios</h1><br>
+	<table border ="1" class="centrar">
 		<thead>
 			<tr>
 				<th>Cedula</th>
 				<th>Correo</th>
 				<th>Nombre</th>
-				<th>Contraseña</th>
+				<th>ContraseÃ±a</th>
 				<th>Usuario</th>
 				<th>Editar</th>
 				<th>Eliminar</th>
@@ -61,5 +62,8 @@
 		
 		</tbody>
 	</table>
+	<br>
+	<a class="btnagregar" href = "agregarUsuario.jsp">Agregar Usuario</a>
+	<a class="btnconsultar" href = "consultarUsuario.jsp">Consultar Usuario</a>
 </body>
 </html>
