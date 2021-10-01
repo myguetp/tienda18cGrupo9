@@ -87,21 +87,7 @@ public class ClientesDAO {
 	}
 	
 	
-	
-	
-		
-	public void eliminarCliente(int cedula) {
-        Conexion conex = new Conexion();
-        try {
-            String query = "DELETE FROM clientes WHERE cedula_cliente = ?";
-            preparedStatement = conex.getConnection().prepareStatement(query);
-            preparedStatement.setInt(1, cedula);
-            preparedStatement.executeUpdate();
-            
-        }catch(Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
+
      public void actualizarcliente(int cedula) {
 		Conexion conex = new Conexion();
 		try {

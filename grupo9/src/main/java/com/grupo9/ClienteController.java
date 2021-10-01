@@ -23,7 +23,7 @@ public class ClienteController {
 			ClientesDAO Dao=new ClientesDAO();
 			return Dao.consultarClientes(documento);
 		}
-		@RequestMapping("/listarClientes")
+		@RequestMapping("/listaDeClientes")
 		public ArrayList <ClientesDTO> listaDeClientes(){
 			ClientesDAO Dao=new ClientesDAO();
 			return Dao.listaDeClientes();

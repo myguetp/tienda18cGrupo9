@@ -10,7 +10,7 @@
 <script>
 	var usuarios = $.ajax({
 		type: "GET",
-		url: "http://localhost:8080/listadeClientes",
+		url: "http://localhost:8080/listaDeClientes",
 		success: function(data){
 			$.each(data, function(i, item){
 				lista = document.getElementById("myTable");
