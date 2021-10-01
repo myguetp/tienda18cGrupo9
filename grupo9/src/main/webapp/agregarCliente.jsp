@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="tiendagenerica2.css">
 </head>
 <body>
-<a href="clientes.jsp">Volver</a><br>
+<jsp:include page="menu.jsp"></jsp:include>
 <form id="formulario2" action="http://localhost:8080/registrarCliente" method="get">
 	<div>
 		<label>Cedula</label>
@@ -34,7 +34,6 @@
 		<input class="btningresar" type = "submit" Value="Enviar">	
 	</div>
 </form>
-
-
+	<a href="clientes.jsp">Volver</a><br>
 </body>
 </html>
