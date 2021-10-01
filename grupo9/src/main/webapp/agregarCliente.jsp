@@ -10,6 +10,7 @@
 <body>
 <jsp:include page="menu.jsp"></jsp:include>
 <form id="formulario2" action="http://localhost:8080/registrarCliente" method="get">
+	<h1>Registrar Cliente</h1><br>
 	<div>
 		<label>Cedula</label>
 		<input type = "text" name="cedulaCliente">	
