@@ -14,14 +14,14 @@ import com.grupo9.DTO.ClienteDTO;
 public class ClienteController {
 		
 		@RequestMapping("/registrarCliente")
-		public void registrarCliente (ClienteDTO clientes) {
+		public void registrarCliente (ClienteDTO cliente) {
 			ClienteDAO Dao=new ClienteDAO();
-			Dao.registrarCliente(clientes);
+			Dao.registrarCliente(cliente);
 		}
 		@RequestMapping("/consultarClientes")
-		public ArrayList <ClienteDTO> consultarCliente (int documento){
+		public ArrayList <ClienteDTO> consultarCliente (int cedula){
 			ClienteDAO Dao=new ClienteDAO();
-			return Dao.consultarCliente(documento);
+			return Dao.consultarCliente(cedula);
 		}
 		@RequestMapping("/listaDeClientes")
 		public ArrayList <ClienteDTO> listaDeClientes(){
@@ -29,9 +29,9 @@ public class ClienteController {
 			return Dao.listaDeClientes();
 		}
 		@RequestMapping("/eliminarCliente")
-		public void eliminarCliente(int documento) {
+		public void eliminarCliente(int cedula) {
 			ClienteDAO Dao=new ClienteDAO();
-			Dao.eliminarCliente(documento);
+			Dao.eliminarCliente(cedula);
 		}
 
 
