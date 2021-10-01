@@ -19,7 +19,7 @@
 	</div>
 	<div>
 		<label>Email</label>
-		<input type = "email" name="emailCLiente">	
+		<input type = "email" name="emailCliente">	
 	</div>
 	<div>
 		<label>Nombre</label>

@@ -9,6 +9,7 @@
 <body>
 <a href="proveedores.jsp">Volver</a><br>
 <form action="http://localhost:8080/registrarProveedor" method="get">
+registarProveedor
 	<div>
 		<label>NIT</label>
 		<input type = "text" name="nitProveedor">	

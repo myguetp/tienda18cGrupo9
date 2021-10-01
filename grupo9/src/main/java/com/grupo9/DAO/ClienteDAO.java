@@ -4,22 +4,22 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import com.grupo9.DTO.ClientesDTO;
+import com.grupo9.DTO.ClienteDTO;
 
 
 
-public class ClientesDAO {
+public class ClienteDAO {
 	PreparedStatement preparedStatement;
 	
-		public ArrayList <ClientesDTO> listaDeClientes(){
-		ArrayList <ClientesDTO> miCliente=new ArrayList<ClientesDTO>();
+		public ArrayList <ClienteDTO> listaDeClientes(){
+		ArrayList <ClienteDTO> miCliente=new ArrayList<ClienteDTO>();
 		Conexion conex=new Conexion();
 		
 		try {
 			PreparedStatement consulta=conex.getConnection().prepareStatement("SELECT * FROM clientes");
 			ResultSet res =consulta.executeQuery();
 			while(res.next()) {
-				ClientesDTO clientes=new ClientesDTO();
+				ClienteDTO clientes=new ClienteDTO();
 				clientes.setCedulaCliente(Integer.parseInt(res.getString("cedula_cliente")));
 				clientes.setDireccionCliente(res.getString("direccion_cliente"));
 				clientes.setEmailCliente(res.getString("email_cliente"));
@@ -36,28 +36,28 @@ public class ClientesDAO {
 		}
 		return miCliente;
 		}
-	public void registrarCliente(ClientesDTO clientes) {
+	public void registrarCliente(ClienteDTO cliente) {
 		Conexion conex=new Conexion();
 		try {
 			Statement st=conex.getConnection().createStatement();
-			st.executeUpdate("INSERT INTO clientes VALUES('"+clientes.getCedulaCliente()+"', '"+clientes.getDireccionCliente()+"', '"+clientes.getEmailCliente()+"', '"+clientes.getNombreCliente()+"', '"+clientes.getTelefonoCliente()+"')");
-			JOptionPane.showMessageDialog(null, "Se ha registrado exitosamente el cliente", "Información", JOptionPane.INFORMATION_MESSAGE);
+			st.executeUpdate("INSERT INTO clientes VALUES('"+cliente.getCedulaCliente()+"','"+cliente.getDireccionCliente()+"','"+cliente.getEmailCliente()+"','"+cliente.getNombreCliente()+"','"+cliente.getTelefonoCliente()+"')");
+			//JOptionPane.showMessageDialog(null, "Se ha registrado exitosamente el cliente", "Información", JOptionPane.INFORMATION_MESSAGE);
 			st.close();
 			conex.desconectar();
 		}catch(Exception e) {
 			System.out.println(e.getMessage());
-			JOptionPane.showMessageDialog(null, "No se pudo registrar el cliente");
+			//JOptionPane.showMessageDialog(null, "No se pudo registrar el cliente");
 		}
 	}
-	public ArrayList <ClientesDTO> consultarClientes(int documento){
-		ArrayList <ClientesDTO> miCliente=new ArrayList <ClientesDTO>();
+	public ArrayList <ClienteDTO> consultarCliente(int documento){
+		ArrayList <ClienteDTO> miCliente=new ArrayList <ClienteDTO>();
 		Conexion conex=new Conexion();
 		try {
 			PreparedStatement consulta=conex.getConnection().prepareStatement("SELECT * FROM clientes WHERE cedula_cliente=?");
 			consulta.setInt(1, documento);
 			ResultSet res = consulta.executeQuery();
 			if(res.next()) {
-				ClientesDTO clientes=new ClientesDTO();
+				ClienteDTO clientes=new ClienteDTO();
 				clientes.setCedulaCliente(Integer.parseInt(res.getString("cedula_cliente")));
 				clientes.setDireccionCliente(res.getString("direccion_cliente"));
 				clientes.setEmailCliente(res.getString("email_cliente"));
@@ -70,7 +70,8 @@ public class ClientesDAO {
 			consulta.close();
 			conex.desconectar();
 		}catch(Exception e) {
-			JOptionPane.showMessageDialog(null, "No se pudo consultar el cliente" + e);
+			//JOptionPane.showMessageDialog(null, "No se pudo consultar el cliente" + e);
+			System.out.println(e.getMessage());
 		}
 		return miCliente;
 	}

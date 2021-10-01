@@ -6,31 +6,31 @@ import java.util.ArrayList;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.grupo9.DAO.ClientesDAO;
-import com.grupo9.DTO.ClientesDTO;
+import com.grupo9.DAO.ClienteDAO;
+import com.grupo9.DTO.ClienteDTO;
 
 
 @RestController
 public class ClienteController {
 		
-		@RequestMapping("/registrarClientes")
-		public void resgistarClientes (ClientesDTO clientes) {
-			ClientesDAO Dao=new ClientesDAO();
+		@RequestMapping("/registrarCliente")
+		public void registrarCliente (ClienteDTO clientes) {
+			ClienteDAO Dao=new ClienteDAO();
 			Dao.registrarCliente(clientes);
 		}
 		@RequestMapping("/consultarClientes")
-		public ArrayList <ClientesDTO> consultarClientes (int documento){
-			ClientesDAO Dao=new ClientesDAO();
-			return Dao.consultarClientes(documento);
+		public ArrayList <ClienteDTO> consultarCliente (int documento){
+			ClienteDAO Dao=new ClienteDAO();
+			return Dao.consultarCliente(documento);
 		}
 		@RequestMapping("/listaDeClientes")
-		public ArrayList <ClientesDTO> listaDeClientes(){
-			ClientesDAO Dao=new ClientesDAO();
+		public ArrayList <ClienteDTO> listaDeClientes(){
+			ClienteDAO Dao=new ClienteDAO();
 			return Dao.listaDeClientes();
 		}
 		@RequestMapping("/eliminarCliente")
 		public void eliminarCliente(int documento) {
-			ClientesDAO Dao=new ClientesDAO();
+			ClienteDAO Dao=new ClienteDAO();
 			Dao.eliminarCliente(documento);
 		}
 

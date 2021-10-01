@@ -40,17 +40,17 @@ public class ProveedorDAO {
 		return miProveedor;
 		}
 		
-	public void registarProveedor(ProveedorDTO proveedor) {
+	public void registrarProveedor(ProveedorDTO proveedor) {
 		Conexion conex = new Conexion();
 		try {
 			Statement st = conex.getConnection().createStatement();
-			st.executeUpdate("INSERT INTO usuarios VALUES ('"+proveedor.getNitProveedor()+"', '"+proveedor.getCiudadProveedor()+"', '"+proveedor.getDireccionProveedor()+"', '"+proveedor.getNombreProveedor()+"', '"+proveedor.getTelefonoProveedor()+"')");
-			JOptionPane.showMessageDialog(null, "Se ha registrado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+			st.executeUpdate("INSERT INTO proveedores VALUES ('"+proveedor.getNitProveedor()+"', '"+proveedor.getCiudadProveedor()+"', '"+proveedor.getDireccionProveedor()+"', '"+proveedor.getNombreProveedor()+"', '"+proveedor.getTelefonoProveedor()+"')");
+			//JOptionPane.showMessageDialog(null, "Se ha registrado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
 			st.close();
 			conex.desconectar();
 		}catch(Exception e) {
 			System.out.println(e.getMessage());
-			JOptionPane.showMessageDialog(null, "No se pudo registrar proveedor");
+			//JOptionPane.showMessageDialog(null, "No se pudo registrar proveedor");
 		}
 	}
 	public ArrayList<ProveedorDTO> consultarProveedor(int nit){
@@ -74,7 +74,8 @@ public class ProveedorDAO {
 			consulta.close();
 			conex.desconectar(); 
 		}catch(Exception e) {
-			JOptionPane.showMessageDialog(null, "No se pudeo consultar al proveedor" +e); 
+			//JOptionPane.showMessageDialog(null, "No se pudeo consultar al proveedor" +e); 
+			System.out.println(e.getMessage());
 		} 
 		return miProveedor; 	
 	}

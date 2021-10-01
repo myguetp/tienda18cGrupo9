@@ -12,26 +12,26 @@ import com.grupo9.DTO.ProveedorDTO;
 @RestController
 public class ProveedorController {
 	
-	@RequestMapping("/registarProveedor")
-	public void registrar(ProveedorDTO proveedor) {
+	@RequestMapping("/registrarProveedor")
+	public void registrarProveedor(ProveedorDTO proveedor) {
 		ProveedorDAO Dao = new ProveedorDAO();
-		Dao.registarProveedor(proveedor);
+		Dao.registrarProveedor(proveedor);
 	}
 	
 	@RequestMapping("/consultarProveedor")
-	public ArrayList<ProveedorDTO> consultar(int nit){
+	public ArrayList<ProveedorDTO> consultarProveedor(int nit){
 		ProveedorDAO Dao = new ProveedorDAO();
 		return Dao.consultarProveedor(nit);
 	}
 	
 	@RequestMapping("/listaDeProveedores")
-	public ArrayList<ProveedorDTO> listar(){
+	public ArrayList<ProveedorDTO> listaDeProveedores(){
 		ProveedorDAO Dao = new ProveedorDAO();
 		return Dao.listaDeProveedores();
 	}
 	
 	@RequestMapping("/eliminarProveedor")
-	public void eliminar(int nit) {
+	public void eliminarProveedor(int nit) {
 		ProveedorDAO Dao = new ProveedorDAO();
 		Dao.eliminarProveedor(nit);
 	}

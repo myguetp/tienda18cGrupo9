@@ -1,6 +1,6 @@
 package com.grupo9.DTO;
 
-public class ClientesDTO {
+public class ClienteDTO {
   private Integer cedulaCliente;
 	private String direccionCliente;
 	private String emailCliente;
