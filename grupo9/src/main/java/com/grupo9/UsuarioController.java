@@ -34,5 +34,13 @@ public class UsuarioController {
 		UsuarioDAO Dao = new UsuarioDAO();
 		Dao.eliminarusuario(cedula);
 	}
+	
+	@RequestMapping("/editarUsuario")
+	public void editarUsuario(UsuarioDTO usuario){
+		UsuarioDAO Dao = new UsuarioDAO();
+		Dao.editarUsuario(usuario);
+		
+		
+	}
 }
 

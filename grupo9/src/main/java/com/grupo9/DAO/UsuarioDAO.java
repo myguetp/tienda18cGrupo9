@@ -3,9 +3,8 @@ package com.grupo9.DAO;
 import java.sql.*;
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
-
 import com.grupo9.DTO.UsuarioDTO;
+
 
 public class UsuarioDAO {
 	PreparedStatement preparedStatement;
@@ -33,7 +32,8 @@ public class UsuarioDAO {
 		
 			}
 		catch(Exception e) {
-			JOptionPane.showMessageDialog(null, "no se pudo realizar consulta"+e);
+			
+			System.out.println(e.getMessage());
 		}
 		return miCliente;
 		}
@@ -43,12 +43,12 @@ public class UsuarioDAO {
 		try {
 			Statement st = conex.getConnection().createStatement();
 			st.executeUpdate("INSERT INTO usuarios VALUES ('"+usuario.getCedulaUsuario()+"', '"+usuario.getEmailUsuario()+"', '"+usuario.getNombreUsuario()+"', '"+usuario.getPassword()+"', '"+usuario.getUsuario()+"')");
-			//JOptionPane.showMessageDialog(null, "Se ha registrado exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+			
 			st.close();
 			conex.desconectar();
 		}catch(Exception e) {
 			System.out.println(e.getMessage());
-			//JOptionPane.showMessageDialog(null, "No se pudo registrar usuario");
+			
 		}
 	}
 	public ArrayList<UsuarioDTO> consultarUsuario(int documento){
@@ -72,7 +72,8 @@ public class UsuarioDAO {
 			consulta.close();
 			conex.desconectar(); 
 		}catch(Exception e) {
-			JOptionPane.showMessageDialog(null, "No se pudeo consultar al usuario" +e); 
+			
+			System.out.println(e.getMessage());
 		} 
 		return miUsuario; 	
 	}
@@ -88,6 +89,16 @@ public class UsuarioDAO {
 			System.out.println(e.getMessage()); 
 		} 
 	}
-			
+	public void editarUsuario(UsuarioDTO usuario) {
+        Conexion conex = new Conexion();
+        try {
+            String query = "UPDATE usuarios set cedula_usuario='"+usuario.getCedulaUsuario()+"', email_usuario='"+usuario.getEmailUsuario()+"',nombre_usuario='"+usuario.getNombreUsuario()+"',password='"+usuario.getPassword()+"',usuario='"+usuario.getUsuario()+"' WHERE cedula_usuario ='"+usuario.getCedulaUsuario()+"'";
+            preparedStatement = conex.getConnection().prepareStatement(query);
+            preparedStatement.executeUpdate();
+            
+        }catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }	
 		
 }
