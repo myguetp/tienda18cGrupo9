@@ -35,6 +35,7 @@
 		<div>
 			<input class="btningresar" type = "submit">
 		</div>
-	</form>	
+	</form>
+	<a href="usuarios.jsp">Volver</a><br>	
 </body>
 </html>
