@@ -35,6 +35,12 @@ public class ProveedorController {
 		ProveedorDAO Dao = new ProveedorDAO();
 		Dao.eliminarProveedor(nit);
 	}
-
+	
+	@RequestMapping("/editarProveedor")
+	public void editarProveedor(ProveedorDTO proveedor){
+		ProveedorDAO Dao = new ProveedorDAO();
+		Dao.editarProveedor(proveedor);
+			
+	}
 
 }

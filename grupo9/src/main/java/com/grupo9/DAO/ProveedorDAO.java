@@ -91,5 +91,18 @@ public class ProveedorDAO {
 			System.out.println(e.getMessage()); 
 		} 
 	}
+	
+	public void editarProveedor(ProveedorDTO proveedor) {
+        Conexion conex = new Conexion();
+        try {
+        	
+        	String query = "UPDATE proveedores set nitproveedor='"+proveedor.getNitProveedor()+"', ciudad_proveedor='"+proveedor.getCiudadProveedor()+"',direccion_proveedor='"+proveedor.getDireccionProveedor()+"',nombre_proveedor='"+proveedor.getNombreProveedor()+"',telefono_proveedor='"+proveedor.getTelefonoProveedor()+"' WHERE nitproveedor ='"+proveedor.getNitProveedor()+"'";
+            preparedStatement = conex.getConnection().prepareStatement(query);
+            preparedStatement.executeUpdate();
+        
+        }catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }	
 
 }

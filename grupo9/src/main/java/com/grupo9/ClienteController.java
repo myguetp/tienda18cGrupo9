@@ -33,6 +33,14 @@ public class ClienteController {
 			ClienteDAO Dao=new ClienteDAO();
 			Dao.eliminarCliente(cedula);
 		}
+		
+		@RequestMapping("/editarCliente")
+		public void editarCliente(ClienteDTO cliente){
+			ClienteDAO Dao = new ClienteDAO();
+			Dao.editarCliente(cliente);
+			
+			
+		}
 
 
 }

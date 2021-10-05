@@ -5,12 +5,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Agregar Producto</title>
-<link rel="stylesheet" type="text/css" href="tiendagenerica2.css">
+<title>Consultar Producto</title>
 </head>
 <body>
 	<jsp:include page="menu.jsp"></jsp:include>
-	<form id="formulario2" action ="http://localhost:8080/registrarProducto" method = "post">
+	<form id="formulario2" action="/consultarProducto" method = "post">
+		<h1>Consultar Producto</h1><br>
 		<h1>Agregar Producto</h1><br>
 		<br>
 		<div>
@@ -19,28 +19,27 @@
 		</div>
 		<div>
 			<label>IVA:</label>
-			<input type = "text" name = "ivaCompra" required>
+			<input type = "text" name = "ivaCompra" >
 		</div>
 		<div>
 			<label>NIT:</label>
-			<input type = "text" name = "nitProveedor" required>
+			<input type = "text" name = "nitProveedor" >
 		</div>
 		<div>
 			<label>Nombre:</label>
-			<input type = "text" name = "nombreProducto" required>
+			<input type = "text" name = "nombreProducto" >
 		</div>
 		<div>
 			<label>Precio Compra:</label>
-			<input type = "text" name = "precioCompra" required>
+			<input type = "text" name = "precioCompra" >
 		</div>
 		<div>
 			<label>Precio Venta:</label>
-			<input type = "text" name = "precioVenta" required>
+			<input type = "text" name = "precioVenta" >
 		</div>
 		<div>
 			<input class="btningresar" type = "submit">
 		</div>
 	</form>
-	<a href="productos.jsp">Volver</a><br>
 </body>
 </html>

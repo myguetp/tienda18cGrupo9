@@ -98,5 +98,19 @@ public class ClienteDAO {
 			System.out.println(e.getMessage());
 		}
     }
+     
+     public void editarCliente(ClienteDTO cliente) {
+         Conexion conex = new Conexion();
+         try {
+         	
+         	String query = "UPDATE clientes set cedula_cliente='"+cliente.getCedulaCliente()+"', direccion_cliente='"+cliente.getDireccionCliente()+"',email_cliente='"+cliente.getEmailCliente()+"',nombre_cliente='"+cliente.getNombreCliente()+"',telefono_cliente='"+cliente.getTelefonoCliente()+"' WHERE cedula_cliente ='"+cliente.getCedulaCliente()+"'";
+             preparedStatement = conex.getConnection().prepareStatement(query);
+             preparedStatement.executeUpdate();
+         
+         }catch(Exception e) {
+             System.out.println(e.getMessage());
+         }
+     }	
+
 
 }
