@@ -10,7 +10,7 @@
 <script>
 	var productos = $.ajax({
 		type: "GET",
-		url: "http://localhost:8080/listaDeProductos",
+		url: "http://localhost:8080/listarProducto",
 		success: function(data){
 			$.each(data, function(i, item){
 				lista = document.getElementById("myTable");
@@ -28,7 +28,7 @@
 				var columna6 = document.createElement("td");
 				columna6.innerHTML = item.precioVenta;
 				var columna7 = document.createElement("td");
-				columna9.innerHTML = "<a href ='editarProducto.jsp?cedula="+item.cedulaUsuario+"'>Editar</a>";
+				columna7.innerHTML = "<a href ='editarProducto.jsp?cedula="+item.cedulaUsuario+"'>Editar</a>";
 				var columna8 = document.createElement("td");
 				columna8.innerHTML = "<a href ='eliminarProducto?cedula="+item.cedulaUsuario+"'>Eliminar</a>";
 				

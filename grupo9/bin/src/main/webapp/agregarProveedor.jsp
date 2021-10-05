@@ -5,11 +5,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Agregar Proveedor</title>
+<link rel="stylesheet" type="text/css" href="tiendagenerica2.css">
 </head>
 <body>
-<a href="proveedores.jsp">Volver</a><br>
-<form action="http://localhost:8080/registrarProveedor" method="get">
-registarProveedor
+<jsp:include page="menu.jsp"></jsp:include>
+<form id="formulario2" action="http://localhost:8080/registrarProveedor" method="get">
+<h1>Registrar Proveedor</h1><br>
 	<div>
 		<label>NIT</label>
 		<input type = "text" name="nitProveedor">	
@@ -31,8 +32,9 @@ registarProveedor
 		<input type = "text" name="telefonoProveedor">	
 	</div>
 	<div>
-		<input type = "submit" Value="Enviar">	
+		<input class="btningresar" type = "submit" Value="Enviar">	
 	</div>
 </form>
+	<a href="proveedores.jsp">Volver</a><br>
 </body>
 </html>

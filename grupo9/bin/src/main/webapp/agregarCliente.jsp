@@ -5,10 +5,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Agregar Cliente</title>
+<link rel="stylesheet" type="text/css" href="tiendagenerica2.css">
 </head>
 <body>
-<a href="clientes.jsp">Volver</a><br>
-<form action="http://localhost:8080/registrarCliente" method="get">
+<jsp:include page="menu.jsp"></jsp:include>
+<form id="formulario2" action="http://localhost:8080/registrarCliente" method="get">
+	<h1>Registrar Cliente</h1><br>
 	<div>
 		<label>Cedula</label>
 		<input type = "text" name="cedulaCliente">	
@@ -30,10 +32,9 @@
 		<input type = "text" name="telefonoCliente">	
 	</div>
 	<div>
-		<input type = "submit" Value="Enviar">	
+		<input class="btningresar" type = "submit" Value="Enviar">	
 	</div>
 </form>
-
-
+	<a href="clientes.jsp">Volver</a><br>
 </body>
 </html>

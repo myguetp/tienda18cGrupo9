@@ -26,9 +26,9 @@
 				var columna5 = document.createElement("td");
 				columna5.innerHTML = item.usuario;
 				var columna6 = document.createElement("td");
-				columna6.innerHTML = "<a href ='eliminarUsuario?cedula="+item.cedulaUsuario+"'>Eliminar</a>";
+				columna6.innerHTML = "<a href ='editarUsuario.jsp?cedula="+item.cedulaUsuario+"'>Editar</a>";
 				var columna7 = document.createElement("td");
-				columna7.innerHTML = "<a href ='editarUsuario?cedula="+item.cedulaUsuario+"'>Editar</a>";
+				columna7.innerHTML = "<a href ='eliminarUsuario?cedula="+item.cedulaUsuario+"'>Eliminar</a>";
 				
 				lista.appendChild(tr);
 				tr.appendChild(columna1);
