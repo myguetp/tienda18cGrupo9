@@ -41,6 +41,6 @@
 			<input class="btningresar" type = "submit">
 		</div>
 	</form>
-	<a href="productoss.jsp">Volver</a><br>
+	<a href="productos.jsp">Volver</a><br>
 </body>
 </html>
