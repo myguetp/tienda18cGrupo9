@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -46,6 +47,16 @@
 <body>
 	<jsp:include page="menu.jsp"></jsp:include><br>
 	<h1>Usuarios</h1><br>
+	<form class="Buscar" action="http://localhost:8080/consultarUsuario.jsp" method="get">
+		<div>
+			<label>Buscar usuario</label> <input type="text" name="cedula">
+		</div>
+		<div>
+			<input type="submit" Value="Buscar" class="btnconsultar">
+		
+		</div>
+	</form>
+	
 	<table border ="1" class="centrar">
 		<thead>
 			<tr>
@@ -64,6 +75,6 @@
 	</table>
 	<br>
 	<a class="btnagregar" href = "agregarUsuario.jsp">Agregar Usuario</a>
-	<a class="btnconsultar" href = "consultarUsuario.jsp">Consultar Usuario</a>
+	
 </body>
 </html>
