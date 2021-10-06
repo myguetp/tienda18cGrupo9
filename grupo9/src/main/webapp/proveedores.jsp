@@ -46,6 +46,16 @@
 <body>
 	<jsp:include page="menu.jsp"></jsp:include><br>
 	<h1>Proveedores</h1><br>
+	<form class="Buscar" action="http://localhost:8080/consultarProveedor.jsp" method="get">
+		<div>
+			<label>Buscar Proveedor</label> <input type="text" name="nit">
+		</div>
+		<div>
+			<input type="submit" Value="Buscar" class="btnconsultar">
+		
+		</div>
+	</form>
+	
 	<table border ="1" class="centrar">
 		<thead>
 			<tr>
@@ -64,6 +74,5 @@
 	</table>
 	<br>
 	<a class="btnagregar" href = "agregarProveedor.jsp">Agregar Proveedor</a>
-	<a class="btnconsultar" href = "consultarProveedor.jsp">Consultar Proveedor</a>
 </body>
 </html>
