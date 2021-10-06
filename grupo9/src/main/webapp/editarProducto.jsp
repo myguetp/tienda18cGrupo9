@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="tiendagenerica2.css">
 </head>
 <body>
+
 	<%
 	int codigoProducto = Integer.parseInt(request.getParameter("codigoProducto"));
 	Conexion conex = new Conexion();
@@ -21,7 +22,7 @@
 	%>
 	
 	<jsp:include page="menu.jsp"></jsp:include>
-	<form id="formulario2" action="http://localhost:8080/editarProducto" method="get">
+	<form class="Buscar" id="formulario" action="http://localhost:8080/editarProducto" method="get">
 	<h1>Editar Producto</h1><br>
 		<div>
 			<label>codigoProducto</label> <input type="text" name="codigoProducto"

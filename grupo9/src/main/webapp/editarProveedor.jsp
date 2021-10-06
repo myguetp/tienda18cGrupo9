@@ -10,18 +10,19 @@
 <link rel="stylesheet" type="text/css" href="tiendagenerica2.css">
 </head>
 <body>
+
 	<%
 	int nit = Integer.parseInt(request.getParameter("nit"));
 	Conexion conex = new Conexion();
 	
-	PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM proveedores WHERE nitproveedor=" + nit);
+	PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM proveedores WHERE nit_proveedor=" + nit);
 	ResultSet res = consulta.executeQuery();
 	
 	while (res.next()){
 	%>
 	
 	<jsp:include page="menu.jsp"></jsp:include>
-	<form id="formulario2" action="http://localhost:8080/editarProveedor" method="get">
+	<form class="Buscar" id="formulario" action="http://localhost:8080/editarProveedor" method="get">
 	<h1>Editar Proveedor</h1><br>
 		<div>
 			<label>Nit</label> <input type="text" name="nit"

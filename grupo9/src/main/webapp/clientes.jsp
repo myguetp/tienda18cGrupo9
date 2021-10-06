@@ -26,7 +26,7 @@
 				var columna5 = document.createElement("td");
 				columna5.innerHTML = item.telefonoCliente;
 				var columna6 = document.createElement("td");
-				columna6.innerHTML = "<a href ='editarCliente?cedula="+item.cedulaCliente+"'>Editar</a>";
+				columna6.innerHTML = "<a href ='editarCliente.jsp?cedula="+item.cedulaCliente+"'>Editar</a>";
 				var columna7 = document.createElement("td");
 				columna7.innerHTML = "<a href ='eliminarCliente?cedula="+item.cedulaCliente+"'>Eliminar</a>";
 				
