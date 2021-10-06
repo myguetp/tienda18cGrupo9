@@ -9,8 +9,8 @@
 #formulario{
 	margin: 0 auto;
 	width: 400px;
-	margin-top: 200px;
-	padding: 40px;
+	margin-top: 20px;
+	padding: 20px;
 }
 #formulario label{
 	float: left;
@@ -129,4 +129,15 @@ th{
 	color:#fff;
 	background-color: #252525;
 	font-weight: 500;
+}
+
+.Buscar{
+	 width: 450px;
+    min-height: 100px;
+    height: auto;
+    border-radius: 5px;
+    margin: auto;
+    /*box-shadow: 0 9px 100px rgb(128, 255, 255);*/
+    padding: 1%;
+    background-color:#DAE3E0;
 }

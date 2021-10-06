@@ -28,9 +28,9 @@
 				var columna6 = document.createElement("td");
 				columna6.innerHTML = item.precioVenta;
 				var columna7 = document.createElement("td");
-				columna7.innerHTML = "<a href ='editarProducto.jsp?cedula="+item.cedulaUsuario+"'>Editar</a>";
+				columna7.innerHTML = "<a href ='editarProducto.jsp?codigoProducto="+item.codigoProducto+"'>Editar</a>";
 				var columna8 = document.createElement("td");
-				columna8.innerHTML = "<a href ='eliminarProducto?cedula="+item.cedulaUsuario+"'>Eliminar</a>";
+				columna8.innerHTML = "<a href ='eliminarProducto?codigoProducto="+item.codigoProducto+"'>Eliminar</a>";
 				
 				lista.appendChild(tr);
 				tr.appendChild(columna1);

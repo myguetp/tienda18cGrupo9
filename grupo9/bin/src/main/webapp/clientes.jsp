@@ -26,7 +26,7 @@
 				var columna5 = document.createElement("td");
 				columna5.innerHTML = item.telefonoCliente;
 				var columna6 = document.createElement("td");
-				columna6.innerHTML = "<a href ='editarCliente?cedula="+item.cedulaCliente+"'>Editar</a>";
+				columna6.innerHTML = "<a href ='editarCliente.jsp?cedula="+item.cedulaCliente+"'>Editar</a>";
 				var columna7 = document.createElement("td");
 				columna7.innerHTML = "<a href ='eliminarCliente?cedula="+item.cedulaCliente+"'>Eliminar</a>";
 				
@@ -46,6 +46,16 @@
 <body>
 	<jsp:include page="menu.jsp"></jsp:include><br>
 	<h1>Clientes</h1><br>
+	<form class="Buscar" action="http://localhost:8080/consultarCliente.jsp" method="get">
+		<div>
+			<label>Buscar Cliente</label> <input type="text" name="cedula">
+		</div>
+		<div>
+			<input type="submit" Value="Buscar" class="btnconsultar">
+		
+		</div>
+	</form>
+	
 	<table border ="1" class="centrar">
 		<thead>
 			<tr>
@@ -64,6 +74,5 @@
 	</table>
 	<br>
 	<a class="btnagregar" href = "agregarCliente.jsp">Agregar Cliente</a>
-	<a class="btnconsultar" href = "consultarCliente.jsp">Consultar Cliente</a>
 </body>
 </html>

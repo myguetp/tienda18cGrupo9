@@ -31,9 +31,9 @@ public class ProductoController {
 	}
 	
 	@RequestMapping("/eliminarProducto")
-	public void eliminarProducto(int id) {
+	public void eliminarProducto(int codProducto) {
 		ProductoDAO Dao = new ProductoDAO();
-		Dao.eliminarProducto(id);
+		Dao.eliminarProducto(codProducto);
 	}
 	
 	@RequestMapping("/editarProducto")

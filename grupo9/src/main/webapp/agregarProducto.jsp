@@ -10,7 +10,7 @@
 </head>
 <body>
 	<jsp:include page="menu.jsp"></jsp:include>
-	<form id="formulario2" action ="http://localhost:8080/registrarProducto" method = "post">
+	<form id="formulario2" action ="http://localhost:8080/registrarProducto" method = "get">
 		<h1>Agregar Producto</h1><br>
 		<br>
 		<div>

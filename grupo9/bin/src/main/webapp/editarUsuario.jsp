@@ -3,15 +3,12 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import ="java.sql.*" %>
 <!DOCTYPE html>
-
 <html>
-
 <head>
 <meta charset="ISO-8859-1">
 <title>Editar Usuario</title>
 <link rel="stylesheet" type="text/css" href="tiendagenerica2.css">
 </head>
-
 <body>
 
 	<%
@@ -24,7 +21,7 @@
 	while (res.next()) {
 	%>
 	<jsp:include page="menu.jsp"></jsp:include>
-	<form id="formulario2" action="http://localhost:8080/editarUsuario" method="get">
+	<form class="Buscar" id="formulario" action="http://localhost:8080/editarUsuario" method="get">
 	<h1>Editar Usuario</h1><br>
 		<div>
 			<label>Cedula</label> <input type="text" name="cedulaUsuario"

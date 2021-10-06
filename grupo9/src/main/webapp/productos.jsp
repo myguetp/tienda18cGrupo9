@@ -28,9 +28,9 @@
 				var columna6 = document.createElement("td");
 				columna6.innerHTML = item.precioVenta;
 				var columna7 = document.createElement("td");
-				columna7.innerHTML = "<a href ='editarProducto.jsp?codigoProducto="+item.codigoProducto+"'>Editar</a>";
+				columna7.innerHTML = "<a href ='editarProducto.jsp?codProducto="+item.codigoProducto+"'>Editar</a>";
 				var columna8 = document.createElement("td");
-				columna8.innerHTML = "<a href ='eliminarProducto?codigoProducto="+item.codigoProducto+"'>Eliminar</a>";
+				columna8.innerHTML = "<a href ='eliminarProducto?codProducto="+item.codigoProducto+"'>Eliminar</a>";
 				
 				lista.appendChild(tr);
 				tr.appendChild(columna1);
@@ -49,6 +49,15 @@
 <body>
 	<jsp:include page="menu.jsp"></jsp:include><br>
 	<h1>Productos</h1><br>
+	<form class="Buscar" action="http://localhost:8080/consultarProducto.jsp" method="get">
+		<div>
+			<label>Buscar Producto</label> <input type="text" name="codProducto">
+		</div>
+		<div>
+			<input type="submit" Value="Buscar" class="btnconsultar">
+		
+		</div>
+	</form>
 	<table border ="1" class="centrar">
 		<thead>
 			<tr>
@@ -68,6 +77,5 @@
 	</table>
 	<br>
 	<a class="btnagregar" href = "agregarProducto.jsp">Agregar Producto</a>
-	<a class="btnconsultar" href = "consultarProducto.jsp">Consultar Producto</a>
 </body>
 </html>

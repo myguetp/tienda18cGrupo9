@@ -12,6 +12,35 @@ import com.grupo9.DTO.ProductoDTO;
 public class ProductoDAO {
 	
 	PreparedStatement preparedStatement;
+	
+	public ArrayList<ProductoDTO> listaDeProducto() {
+		ArrayList<ProductoDTO> miProducto = new ArrayList<>();
+		Conexion conex = new Conexion();
+		
+		try {
+			PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM productos");
+			ResultSet res = consulta.executeQuery();
+			while(res.next()) {
+				ProductoDTO producto = new ProductoDTO();
+				producto.setCodigoProducto(res.getInt("codigo_producto"));
+				producto.setIvaCompra(res.getDouble("iva_compra"));
+				producto.setNitProveedor(res.getInt("nit_proveedor"));
+				producto.setNombreProducto(res.getString("nombre_producto"));
+				producto.setPrecioCompra(res.getDouble("precio_compra"));
+				producto.setPrecioVenta(res.getDouble("precio_venta"));
+				miProducto.add(producto); 
+					}
+					res.close();
+					consulta.close();
+					conex.desconectar();
+		
+			}
+		catch(Exception e) {
+			JOptionPane.showMessageDialog(null, "no se pudo realizar consulta"+e);
+		}
+		return miProducto;
+	}
+	
 
 	public void registrarProducto(ProductoDTO producto) {
 		Conexion conex = new Conexion();
@@ -57,40 +86,14 @@ public class ProductoDAO {
 
 	}
 
-	public ArrayList<ProductoDTO> listaDeProducto() {
-		ArrayList<ProductoDTO> miProducto = new ArrayList<>();
-		Conexion conex = new Conexion();
-		
-		try {
-			PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM productos");
-			ResultSet res = consulta.executeQuery();
-			while(res.next()) {
-				ProductoDTO producto = new ProductoDTO();
-				producto.setCodigoProducto(res.getInt("codigo_producto"));
-				producto.setIvaCompra(res.getDouble("iva_compra"));
-				producto.setNitProveedor(res.getInt("nitproveedor"));
-				producto.setNombreProducto(res.getString("nombre_producto"));
-				producto.setPrecioCompra(res.getDouble("precio_compra"));
-				producto.setPrecioVenta(res.getDouble("precio_venta"));
-				miProducto.add(producto); 
-					}
-					res.close();
-					consulta.close();
-					conex.desconectar();
-		
-			}
-		catch(Exception e) {
-			JOptionPane.showMessageDialog(null, "no se pudo realizar consulta"+e);
-		}
-		return miProducto;
-	}
 
-	public void eliminarProducto(int id) {
+
+	public void eliminarProducto(int codProducto) {
 		Conexion conex = new Conexion();
 		try { 
 			String query = "DELETE FROM productos WHERE codigo_producto = ?"; 
 			preparedStatement = conex.getConnection().prepareStatement(query);
-			preparedStatement.setInt(1, id);
+			preparedStatement.setInt(1, codProducto);
 			preparedStatement.executeUpdate();
 		}catch(Exception e) {
 			System.out.println(e.getMessage()); 
