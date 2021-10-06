@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Consultar Usuario</title>
+<title>Consultar Proveedor</title>
 <link rel="stylesheet" type="text/css" href="tiendagenerica2.css">
 </head>
 <body>
@@ -24,8 +24,8 @@
 	while (res.next()) {
 	%>
     <jsp:include page="menu.jsp"></jsp:include><br>
-	<form class="Buscar" id="formulario" action="http://localhost:8080/editarUsuario" method="get">
-	<h1>Datos de usuario consultado</h1><br>
+	<form class="Buscar" id="formulario" action="http://localhost:8080/editarProveedor" method="get">
+	<h1>Datos de proveedor consultado</h1><br>
 		<div>
 			<label>NIT</label> <input type="text" name="nitProveedor"
 				value="<%=nit%>" readonly>
@@ -47,7 +47,7 @@
 				value="<%=res.getString("telefono_proveedor")%>">
 		</div>
 		<div>
-			<input class="btningresar" type="submit" Value="Actualizar Usuario"> 
+			<input class="btningresar" type="submit" Value="Actualizar Proveedor"> 
 			
 			<button  class="btningresar" onclick="location.href='eliminarProveedor?nit=<%=nit%>'" type="button" class="">Eliminar Proveedor</button>
 		</div>
