@@ -10,7 +10,7 @@
 <script>
 	var productos = $.ajax({
 		type: "GET",
-		url: "http://localhost:8080/listarProducto",
+		url: "http://localhost:8080/listaDeProductos",
 		success: function(data){
 			$.each(data, function(i, item){
 				lista = document.getElementById("myTable");

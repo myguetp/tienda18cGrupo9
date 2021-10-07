@@ -21,10 +21,10 @@ public class ProductoController {
 		ProductoDAO Dao=new ProductoDAO();
 		return Dao.consultarProducto(codigo);
 	}
-	@RequestMapping("/listaDeProducto")
+	@RequestMapping("/listaDeProductos")
 	public ArrayList <ProductoDTO> listaDeProducto(){
 		ProductoDAO Dao=new ProductoDAO();
-		return Dao.listaDeProducto();
+		return Dao.listaDeProductos();
 	}
 	@RequestMapping("/eliminarProducto")
 	public void eliminarProducto(int codigo) {
@@ -37,4 +37,4 @@ public class ProductoController {
 		ProductoDAO Dao = new ProductoDAO();
 		Dao.editarProducto(producto);
 	}
-
+}

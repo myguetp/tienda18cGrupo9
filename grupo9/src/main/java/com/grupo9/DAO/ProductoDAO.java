@@ -12,7 +12,7 @@ import com.grupo9.DTO.ProductoDTO;
 public class ProductoDAO {
 	PreparedStatement preparedStatement;
 	
-	public ArrayList <ProductoDTO> listaDeProducto(){
+	public ArrayList <ProductoDTO> listaDeProductos(){
 		ArrayList <ProductoDTO> miProducto=new ArrayList <ProductoDTO>();
 		Conexion conex=new Conexion();
 	
