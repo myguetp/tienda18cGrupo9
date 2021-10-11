@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import com.grupo9.DTO.UsuarioDTO;
 
 
+
 public class UsuarioDAO {
 	PreparedStatement preparedStatement;
 	
@@ -51,12 +52,31 @@ public class UsuarioDAO {
 			
 		}
 	}
-	public ArrayList<UsuarioDTO> consultarUsuario(int documento){
+	
+	public void editarUsuario(UsuarioDTO usuario) {
+		Conexion conex= new Conexion();
+		try {
+			Statement st= conex.getConnection().createStatement();
+			st.executeUpdate("UPDATE usuarios set cedula_usuario='"+usuario.getCedulaUsuario()+"', email_usuario='"+usuario.getEmailUsuario()+"',nombre_usuario='"+usuario.getNombreUsuario()+"',password='"+usuario.getPassword()+"',usuario='"+usuario.getUsuario()+"' WHERE cedula_usuario ="+usuario.getCedulaUsuario());
+			
+			System.out.println("Se actualizo correctamente el usuario");
+			
+			st.close();
+			conex.desconectar();
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			
+			System.out.println("No se actualizo el usuario");
+		}
+	}
+	
+	public ArrayList<UsuarioDTO> consultarUsuario(int cedulaUsuario){
 		ArrayList<UsuarioDTO> miUsuario = new ArrayList<UsuarioDTO>();
 		Conexion conex = new Conexion();
 		try {
 			PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM usuarios WHERE cedula_usuario = ?");
-			consulta.setInt(1, documento);
+			consulta.setInt(1, cedulaUsuario);
 			ResultSet res = consulta.executeQuery();
 			
 			if(res.next()){
@@ -89,7 +109,7 @@ public class UsuarioDAO {
 			System.out.println(e.getMessage()); 
 		} 
 	}
-	public void editarUsuario(UsuarioDTO usuario) {
+	/*public void editarUsuario(UsuarioDTO usuario) {
         Conexion conex = new Conexion();
         try {
             String query = "UPDATE usuarios set cedula_usuario='"+usuario.getCedulaUsuario()+"', email_usuario='"+usuario.getEmailUsuario()+"',nombre_usuario='"+usuario.getNombreUsuario()+"',password='"+usuario.getPassword()+"',usuario='"+usuario.getUsuario()+"' WHERE cedula_usuario ='"+usuario.getCedulaUsuario()+"'";
@@ -99,6 +119,6 @@ public class UsuarioDAO {
         }catch(Exception e) {
             System.out.println(e.getMessage());
         }
-    }	
+    }*/	
 		
 }

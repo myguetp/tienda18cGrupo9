@@ -8,54 +8,60 @@
 <meta charset="ISO-8859-1">
 <title>Consultar Usuario</title>
 <link rel="stylesheet" type="text/css" href="tiendagenerica2.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+var cedula="<%=request.getParameter("cedula")%>"
+var usuario=$.ajax({
+	type : "GET",
+	url : "http://localhost:8080/consultarUsuario?cedulaUsuario="+cedula,
+	success : function(data) {
+		$.each(data, function(i, item) {
+			document.getElementById("cedula").value= item.cedulaUsuario;
+			document.getElementById("correo").value= item.emailUsuario;
+			document.getElementById("nombre").value= item.nombreUsuario;
+			document.getElementById("pass").value= item.password;
+			document.getElementById("usuario").value= item.usuario;
+		})
+	}
+	
+});
+
+</script>
+
 </head>
 <body>
 
 <body>
 
-	
-	<%
-	int cedula = Integer.parseInt(request.getParameter("cedula"));
-	Conexion conex = new Conexion();
-
-	PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM usuarios WHERE cedula_usuario=" + cedula);
-	ResultSet res = consulta.executeQuery();
-
-	while (res.next()) {
-	%>
     <jsp:include page="menu.jsp"></jsp:include><br>
-	<form class="Buscar" id="formulario" action="http://localhost:8080/editarUsuario" method="get">
+	<form class="Buscar" id="formulario" action="" method="get">
 	<h1>Datos de usuario consultado</h1><br>
+<div>
+		<label>Cedula</label>
+		<input type = "text" name="cedulaUsuario" id="cedula" disabled="disabled">	
+	</div>
+	<div>
+		<label>Correo</label>
+		<input type = "email" name="emailUsuario" id="correo" disabled="disabled">	
+	</div>
+	<div>
+		<label>Nombre</label>
+		<input type = "text" name="nombreUsuario" id="nombre" disabled="disabled">	
+	</div>
+	<div>
+		<label>Contraseña</label>
+		<input type = "password" name="password" id="pass" disabled="disabled">	
+	</div>
+	<div>
+		<label>Usuario</label>
+		<input type = "text" name="usuario" id="usuario" disabled="disabled">	
+	</div>
 		<div>
-			<label>Cedula</label> <input type="text" name="cedulaUsuario"
-				value="<%=cedula%>" readonly>
-		</div>
-		<div>
-			<label>Correo</label> <input type="email" name="emailUsuario"
-				value="<%=res.getString("email_usuario")%>">
-		</div>
-		<div>
-			<label>Nombre</label> <input type="text" name="nombreUsuario"
-				value="<%=res.getString("nombre_usuario")%>">
-		</div>
-		<div>
-			<label>Contraseña</label> <input type="password" name="password"
-				value="<%=res.getString("password")%>">
-		</div>
-		<div>
-			<label>Usuario</label> <input type="text" name="usuario"
-				value="<%=res.getString("usuario")%>">
-		</div>
-		<div>
-			<input class="btningresar" type="submit" Value="Actualizar Usuario"> 
-			
-			<button  class="btningresar" onclick="location.href='eliminarUsuario?cedula=<%=cedula%>'" type="button" class="">Eliminar Usuario</button>
+			<button class="btningresar" onclick="location.href='usuarios.jsp'" type="button" class="">VOLVER</button>	
 		</div>
 	</form>
 
-	<%
-	}
-	%>
 </body>
 
 </body>

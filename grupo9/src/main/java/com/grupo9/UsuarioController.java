@@ -18,12 +18,12 @@ public class UsuarioController {
 	}
 	
 	@RequestMapping("/consultarUsuario")
-	public ArrayList<UsuarioDTO> consultarUsuario(int documento){
+	public ArrayList<UsuarioDTO> consultarUsuario(int cedulaUsuario){
 		UsuarioDAO Dao = new UsuarioDAO();
-		return Dao.consultarUsuario(documento);
+		return Dao.consultarUsuario(cedulaUsuario);
 	}
 	
-	@RequestMapping("/listarUsuarios")
+	@RequestMapping("/listaDeUsuarios")
 	public ArrayList<UsuarioDTO> listaDeUsuarios(){
 		UsuarioDAO Dao = new UsuarioDAO();
 		return Dao.listaDeUsuarios();
