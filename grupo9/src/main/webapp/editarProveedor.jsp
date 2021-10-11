@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Editar Usuario</title>
+<title>Editar Proveedor</title>
 <link rel="stylesheet" type="text/css" href="tiendagenerica2.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
