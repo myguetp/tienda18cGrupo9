@@ -35,7 +35,8 @@ public class ProveedorDAO {
 		
 			}
 		catch(Exception e) {
-			JOptionPane.showMessageDialog(null, "no se pudo realizar consulta"+e);
+			//JOptionPane.showMessageDialog(null, "no se pudo realizar consulta"+e);
+			System.out.println(e.getMessage());
 		}
 		return miProveedor;
 		}
@@ -49,8 +50,8 @@ public class ProveedorDAO {
 			st.close();
 			conex.desconectar();
 		}catch(Exception e) {
-			System.out.println(e.getMessage());
 			//JOptionPane.showMessageDialog(null, "No se pudo registrar proveedor");
+			System.out.println(e.getMessage());
 		}
 	}
 	public ArrayList<ProveedorDTO> consultarProveedor(int nit){
@@ -93,16 +94,15 @@ public class ProveedorDAO {
 	}
 	
 	public void editarProveedor(ProveedorDTO proveedor) {
-        Conexion conex = new Conexion();
-        try {
-        	
-        	String query = "UPDATE proveedores set nit_proveedor='"+proveedor.getNitProveedor()+"', ciudad_proveedor='"+proveedor.getCiudadProveedor()+"',direccion_proveedor='"+proveedor.getDireccionProveedor()+"',nombre_proveedor='"+proveedor.getNombreProveedor()+"',telefono_proveedor='"+proveedor.getTelefonoProveedor()+"' WHERE nit_proveedor ='"+proveedor.getNitProveedor()+"'";
-            preparedStatement = conex.getConnection().prepareStatement(query);
-            preparedStatement.executeUpdate();
-        
-        }catch(Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }	
+        	Conexion conex = new Conexion();
+       		 try {
+            		Statement st = conex.getConnection().createStatement();
+            		st.executeUpdate("UPDATE proveedores SET nit_proveedor='"+proveedor.getNitProveedor()+"',ciudad_proveedor='"+proveedor.getCiudadProveedor()+"',direccion_proveedor='"+proveedor.getDireccionProveedor()+"',nombre_proveedor='"+proveedor.getNombreProveedor()+"',telefono_proveedor='"+proveedor.getTelefonoProveedor()+"' WHERE nit_proveedor ='"+proveedor.getNitProveedor()+"'");
+            		st.close();
+            		conex.desconectar();
+		}catch(Exception e) {
+            		System.out.println(e.getMessage());
+        	}
+	}
 
 }
