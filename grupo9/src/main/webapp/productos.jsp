@@ -10,7 +10,7 @@
 <script>
 	var productos = $.ajax({
 		type: "GET",
-		url: "http://localhost:8080/listaDeProductos",
+		url: "http://localhost:8080/listaDeProducto",
 		success: function(data){
 			$.each(data, function(i, item){
 				lista = document.getElementById("myTable");
@@ -29,8 +29,6 @@
 				columna6.innerHTML = item.precioVenta;
 				var columna7 = document.createElement("td");
 				columna7.innerHTML = "<a href ='editarProducto.jsp?codigo="+item.codigoProducto+"'>Editar</a>";
-				var columna8 = document.createElement("td");
-				columna8.innerHTML = "<a href ='eliminarProducto?codigo="+item.codigoProducto+"'>Eliminar</a>";
 				
 				lista.appendChild(tr);
 				tr.appendChild(columna1);
@@ -40,7 +38,6 @@
 				tr.appendChild(columna5);
 				tr.appendChild(columna6);
 				tr.appendChild(columna7);
-				tr.appendChild(columna8);
 			});
 		}
 	})
@@ -49,15 +46,6 @@
 <body>
 	<jsp:include page="menu.jsp"></jsp:include><br>
 	<h1>Productos</h1><br>
-	<form class="Buscar" action="http://localhost:8080/consultarProducto.jsp" method="get">
-		<div>
-			<label>Buscar Producto</label> <input type="text" name="codProducto">
-		</div>
-		<div>
-			<input type="submit" Value="Buscar" class="btnconsultar">
-		
-		</div>
-	</form>
 	<table border ="1" class="centrar">
 		<thead>
 			<tr>
@@ -68,7 +56,6 @@
 				<th>Precio de Compra</th>
 				<th>Precio de Venta</th>
 				<th>Editar</th>
-				<th>Eliminar</th>
 			</tr>
 		</thead>
 		<tbody id="myTable">
@@ -77,5 +64,7 @@
 	</table>
 	<br>
 	<a class="btnagregar" href = "agregarProducto.jsp">Agregar Producto</a>
+	<a class="btnconsultar" href = "consultarProducto.jsp">Consultar Producto</a>
 </body>
 </html>
+
