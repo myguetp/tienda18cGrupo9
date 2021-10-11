@@ -12,7 +12,7 @@ import com.grupo9.DTO.ProductoDTO;
 public class ProductoDAO {
 	PreparedStatement preparedStatement;
 	
-	public ArrayList <ProductoDTO> listaDeProductos(){
+	public ArrayList <ProductoDTO> listaDeProducto(){
 		ArrayList <ProductoDTO> miProducto=new ArrayList <ProductoDTO>();
 		Conexion conex=new Conexion();
 	
@@ -76,29 +76,17 @@ public class ProductoDAO {
 		}
 		return miProducto;
 	}
-	public void eliminarProducto(int codigo) {
-		Conexion conex=new Conexion();
-		try {
-			String query = "DELETE FROM productos WHERE codigo_producto = ?";
-			preparedStatement=conex.getConnection().prepareStatement(query);
-			preparedStatement.setInt(1, codigo);
-			preparedStatement.executeUpdate();
-		}catch(Exception e) {
-			System.out.println(e.getMessage());
-		}
-	}
 	
 	public void editarProducto(ProductoDTO producto) {
 		Conexion conex = new Conexion();
         try {
-            String query = "UPDATE productos set codigo_producto='"+producto.getCodigoProducto()+"', iva_compra='"+producto.getIvaCompra()+"',nit_proveedor='"+producto.getNitProveedor()+"',nombre_producto='"+producto.getNombreProducto()+"',precio_compra='"+producto.getPrecioCompra()+"',precio_venta='"+producto.getPrecioVenta()+"' WHERE codigo_producto ='"+producto.getCodigoProducto()+"'";
-            preparedStatement = conex.getConnection().prepareStatement(query);
-            preparedStatement.executeUpdate();
-            
+        	Statement st = conex.getConnection().createStatement();
+        	st.executeUpdate("UPDATE productos SET codigo_producto = '"+producto.getCodigoProducto()+"',iva_compra='"+producto.getIvaCompra()+"',nit_proveedor='"+producto.getNitProveedor()+"',nombre_producto='"+producto.getNombreProducto()+"',precio_compra='"+producto.getPrecioCompra()+"',precio_venta='"+producto.getPrecioVenta()+"' WHERE codigo_producto ='"+producto.getCodigoProducto()+"'");
+            st.close();
+            conex.desconectar();      
         }catch(Exception e) {
             System.out.println(e.getMessage());
         }
 		
 	}
 }
-
