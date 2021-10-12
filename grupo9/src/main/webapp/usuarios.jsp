@@ -26,7 +26,7 @@
 						columna4.innerHTML = item.password;
 						var columna5 = document.createElement("td");
 						columna5.innerHTML = item.usuario;
-						var columna6 = document.createElement("td");
+						
 						
 						var columna6 = document.createElement("td");
 						columna6.innerHTML = "<a href='' onclick ='eliminarUsuario("+item.cedulaUsuario+")'>Eliminar</a>";
