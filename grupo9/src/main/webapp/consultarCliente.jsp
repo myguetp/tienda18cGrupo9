@@ -11,10 +11,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 
-var cedula="<%=request.getParameter("documento")%>"
+var cedula="<%=request.getParameter("cedula")%>"
 var usuario=$.ajax({
 	type : "GET",
-	url : "http://localhost:8080/consultarCliente?cedulaCliente="+documento,
+	url : "http://localhost:8080/consultarCliente?cedulaCliente="+cedula,
 	success : function(data) {
 		$.each(data, function(i, item) {
 			document.getElementById("cedula").value= item.cedulaCliente;

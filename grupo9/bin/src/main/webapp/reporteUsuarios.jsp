@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Usuarios</title>
+<title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="tiendagenerica.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -27,12 +27,6 @@
 						var columna5 = document.createElement("td");
 						columna5.innerHTML = item.usuario;
 						
-						
-						var columna6 = document.createElement("td");
-						columna6.innerHTML = "<a href='' onclick ='eliminarUsuario("+item.cedulaUsuario+")'>Eliminar</a>";
-				
-						var columna7 = document.createElement("td");
-						columna7.innerHTML = "<a href='editarUsuario.jsp?cedula="+ item.cedulaUsuario + "'>Editar</a>";
 
 						lista.appendChild(tr);
 						tr.appendChild(columna1);
@@ -40,44 +34,17 @@
 						tr.appendChild(columna3);
 						tr.appendChild(columna4);
 						tr.appendChild(columna5);
-						tr.appendChild(columna6);
-						tr.appendChild(columna7);
-						
 					}
-					
 					);
-					
 				}
-			
 			})
-			
-		
-	function eliminarUsuario(cedula) {
-		alert("Se va a eliminar el usuario");
-		var eliminar = $.ajax({
-			type : "get",
-			url : "http://localhost:8080/eliminarUsuario?cedula="+cedula,
-			success : function(data) {
-				window.location.replace("http://localhost:8080/usuarios.jsp");
-			}
-		})
-		alert("usuario eliminado");
-		
-	}
 </script>
 </head>
+
 <body>
 	<jsp:include page="menu.jsp"></jsp:include><br>
-	<h1>Usuarios</h1><br>
-	<form class="Buscar" action="http://localhost:8080/consultarUsuario.jsp" method="get">
-		<div>
-			<label>Buscar usuario</label> <input type="text" name="cedula">
-		</div>
-		<div>
-			<input type="submit" Value="Buscar" class="btnconsultar">
-		
-		</div>
-	</form>
+	<h1>Listado de Usuarios</h1><br>
+	
 	
 	<table border ="1" class="centrar">
 		<thead>
@@ -85,10 +52,8 @@
 				<th>Cedula</th>
 				<th>Correo</th>
 				<th>Nombre</th>
-				<th>ContraseÃ±a</th>
+				<th>Contraseña</th>
 				<th>Usuario</th>
-				<th>Eliminar</th>
-				<th>Editar</th>
 			</tr>
 		</thead>
 		<tbody id="myTable">
@@ -96,7 +61,7 @@
 		</tbody>
 	</table>
 	<br>
-	<a class="btnagregar" href = "agregarUsuario.jsp">Agregar Usuario</a>
+	<a class="btnagregar" href = "reportes.jsp">Volver</a>
 	
 </body>
 </html>

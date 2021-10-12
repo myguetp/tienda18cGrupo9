@@ -102,6 +102,8 @@ body h1 {
 	cursor: pointer;
 }
 
+  
+
 #botones input:hover{transform: translatey(2px);}
 #botones input:active{transform: translatey(5px);}
 

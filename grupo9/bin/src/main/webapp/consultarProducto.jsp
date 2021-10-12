@@ -7,14 +7,15 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Consultar Producto</title>
+<link rel="stylesheet" type="text/css" href="tiendagenerica2.css">
 </head>
 <body>
 
 <%
-	int codProducto = Integer.parseInt(request.getParameter("codProducto"));
+	int codigo = Integer.parseInt(request.getParameter("codigo"));
 	Conexion conex = new Conexion();
 
-	PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM productos WHERE codigo_producto=" + codProducto);
+	PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM productos WHERE codigo_producto=" + codigo);
 	ResultSet res = consulta.executeQuery();
 
 	while (res.next()) {
@@ -24,7 +25,7 @@
 	<h1>Datos de producto consultado</h1><br>
 		<div>
 			<label>Codigo Producto</label> <input type="text" name="codigoProducto"
-				value="<%=codProducto%>" readonly>
+				value="<%=codigo%>" readonly>
 		</div>
 		<div>
 			<label>IVA</label> <input type="text" name="ivaCompra"
@@ -49,7 +50,6 @@
 		<div>
 			<input class="btningresar" type="submit" Value="Actualizar Producto"> 
 			
-			<button  class="btningresar" onclick="location.href='eliminarProducto?codProducto=<%=codProducto%>'" type="button" class="">Eliminar Producto</button>
 		</div>
 	</form>
 

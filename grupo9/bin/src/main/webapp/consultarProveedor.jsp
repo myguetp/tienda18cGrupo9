@@ -13,14 +13,11 @@
 
 <body>
 
-	
 	<%
 	int nit = Integer.parseInt(request.getParameter("nit"));
 	Conexion conex = new Conexion();
-
 	PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM proveedores WHERE nit_proveedor=" + nit);
 	ResultSet res = consulta.executeQuery();
-
 	while (res.next()) {
 	%>
     <jsp:include page="menu.jsp"></jsp:include><br>
@@ -45,11 +42,6 @@
 		<div>
 			<label>Telefono</label> <input type="text" name="telefonoProveedor"
 				value="<%=res.getString("telefono_proveedor")%>">
-		</div>
-		<div>
-			<input class="btningresar" type="submit" Value="Actualizar Proveedor"> 
-			
-			<button  class="btningresar" onclick="location.href='eliminarProveedor?nit=<%=nit%>'" type="button" class="">Eliminar Proveedor</button>
 		</div>
 	</form>
 

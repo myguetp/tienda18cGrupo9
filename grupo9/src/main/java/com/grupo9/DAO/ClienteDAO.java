@@ -53,12 +53,12 @@ public class ClienteDAO {
 		}
 	}
 	
-	public ArrayList <ClienteDTO> consultarCliente(int documento){
+	public ArrayList <ClienteDTO> consultarCliente(int cedulaCliente){
 		ArrayList <ClienteDTO> miCliente=new ArrayList <ClienteDTO>();
 		Conexion conex=new Conexion();
 		try {
 			PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM clientes WHERE cedula_cliente = ?");
-			consulta.setInt(1, documento);
+			consulta.setInt(1, cedulaCliente);
 			ResultSet res = consulta.executeQuery();
 			if(res.next()) {
 				ClienteDTO cliente=new ClienteDTO();

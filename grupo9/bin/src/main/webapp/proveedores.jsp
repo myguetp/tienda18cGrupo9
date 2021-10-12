@@ -28,7 +28,7 @@
 				var columna6 = document.createElement("td");
 				columna6.innerHTML = "<a href ='editarProveedor.jsp?nit="+item.nitProveedor+"'>Editar</a>";
 				var columna7 = document.createElement("td");
-				columna7.innerHTML = "<a href ='eliminarProveedor?nit="+item.nitProveedor+"'>Eliminar</a>";
+				columna7.innerHTML = "<a href = '' onclick = 'eliminarProveedor("+item.nitProveedor+")'>Eliminar</a>";
 				
 				lista.appendChild(tr);
 				tr.appendChild(columna1);
@@ -41,6 +41,16 @@
 			});
 		}
 	})
+	
+	function eliminarProveedor(nit){
+		var eliminar = $.ajax({
+			type : "GET",
+			url: "http://localhost:8080/eliminarProveedor?nit="+nit,
+			success: function(data){
+				
+			}
+		});
+	}
 </script>
 </head>
 <body>
@@ -51,11 +61,11 @@
 			<label>Buscar Proveedor</label> <input type="text" name="nit">
 		</div>
 		<div>
-			<input type="submit" Value="Buscar" class="btnconsultar">
+			<input type="submit" Value="Consultar" class="btnconsultar">
 		
 		</div>
 	</form>
-	
+	<br>
 	<table border ="1" class="centrar">
 		<thead>
 			<tr>

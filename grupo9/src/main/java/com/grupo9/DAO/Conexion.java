@@ -13,7 +13,7 @@ public class Conexion {
     public Conexion() {
         try{
            
-           Class.forName("org.mariadb.jdbc.Driver");
+           Class.forName("com.mysql.cj.jdbc.Driver");
            
            connection = DriverManager.getConnection(url,login,password);
            if (connection!=null){

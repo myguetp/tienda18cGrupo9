@@ -8,7 +8,9 @@
 <link rel="stylesheet" type="text/css" href="tiendagenerica.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-	var usuarios = $.ajax({
+
+	var clientes = $.ajax(
+		{
 		type: "GET",
 		url: "http://localhost:8080/listaDeClientes",
 		success: function(data){
@@ -25,12 +27,12 @@
 				columna4.innerHTML = item.nombreCliente;
 				var columna5 = document.createElement("td");
 				columna5.innerHTML = item.telefonoCliente;
-				var columna6 = document.createElement("td")
-				
 				var columna6 = document.createElement("td");
-				columna6.innerHTML = "<a href ='editarCliente.jsp?cedula="+item.cedulaCliente+"'>Editar</a>";
+				columna6.innerHTML =  "<a href='' onclick ='eliminarCliente("+item.cedulaCliente+")'>Eliminar</a>";
+				
 				var columna7 = document.createElement("td");
-				columna7.innerHTML = "<a href = '' onclick = 'eliminarCliente("+item.cedulaCliente+")'>Eliminar</a>";
+				columna7.innerHTML =  "<a href='editarCliente.jsp?cedula="+ item.cedulaCliente + "'>Editar</a>";
+			
 				
 				lista.appendChild(tr);
 				tr.appendChild(columna1);
@@ -40,22 +42,23 @@
 				tr.appendChild(columna5);
 				tr.appendChild(columna6);
 				tr.appendChild(columna7);
+			 	
 			});
 		}
 	})
 	
-	function eliminarCliente(cedula){
+	function eliminarCliente(cedula) {
+		
 		var eliminar = $.ajax({
-			type: "GET",
-			url: "http://localhost:8080/eliminarCliente?cedula="+cedula,
-			succes: function(data){
+			type : "get",
+			url : "http://localhost:8080/eliminarCliente?cedula="+cedula,
+			success : function(data) {
 				
-			}		
-		});
+			}
+		})
+		
+		
 	}
-	
-	
-	
 </script>
 </head>
 <body>
@@ -79,8 +82,8 @@
 				<th>Email</th>
 				<th>Nombre</th>
 				<th>Telefono</th>
-				<th>Editar</th>
 				<th>Eliminar</th>
+				<th>Editar</th>				
 			</tr>
 		</thead>
 		<tbody id="myTable">

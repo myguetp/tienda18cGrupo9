@@ -19,9 +19,9 @@ public class ClienteController {
 			Dao.registrarCliente(cliente);
 		}
 		@RequestMapping("/consultarCliente")
-		public ArrayList <ClienteDTO> consultarCliente (int documento){
+		public ArrayList <ClienteDTO> consultarCliente (int cedulaCliente){
 			ClienteDAO Dao=new ClienteDAO();
-			return Dao.consultarCliente(documento);
+			return Dao.consultarCliente(cedulaCliente);
 		}
 		@RequestMapping("/listaDeClientes")
 		public ArrayList <ClienteDTO> listaDeClientes(){
