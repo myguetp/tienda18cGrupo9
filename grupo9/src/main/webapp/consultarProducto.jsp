@@ -8,54 +8,59 @@
 <meta charset="ISO-8859-1">
 <title>Consultar Producto</title>
 <link rel="stylesheet" type="text/css" href="tiendagenerica2.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+var codigo="<%=request.getParameter("codigo")%>"
+var producto=$.ajax({
+	type:"GET",
+	url:"http://localhost:8080/consultarProducto?codigo="+codigo,
+	success: function(data){
+		$.each(data, function(i, item){
+			document.getElementById("codigoProducto").value = item.codigoProducto;
+			document.getElementById("ivaCompra").value = item.ivaCompra;
+			document.getElementById("nitProveedor").value = item.nitProveedor;
+			document.getElementById("nombreProducto").value = item.nombreProducto;
+			document.getElementById("precioCompra").value = item.precioCompra;
+			document.getElementById("precioVenta").value = item.precioVenta;
+			})
+		}
+	});
+	
+</script>
 </head>
 <body>
-
-<%
-	int codigo = Integer.parseInt(request.getParameter("codigo"));
-	Conexion conex = new Conexion();
-
-	PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM productos WHERE codigo_producto=" + codigo);
-	ResultSet res = consulta.executeQuery();
-
-	while (res.next()) {
-	%>
     <jsp:include page="menu.jsp"></jsp:include><br>
-	<form class="Buscar" id="formulario" action="http://localhost:8080/editarProducto" method="get">
-	<h1>Datos de producto consultado</h1><br>
+	<form class="Buscar" id="formulario" action="" method="get">
+	<h1>Datos de producto consultado</h1>
+	<br>
 		<div>
-			<label>Codigo Producto</label> <input type="text" name="codigoProducto"
-				value="<%=codigo%>" readonly>
+			<label>Codigo:</label>
+			<input type = "text" name = "codigoProducto" id = "codigoProducto">
 		</div>
 		<div>
-			<label>IVA</label> <input type="text" name="ivaCompra"
-				value="<%=res.getString("iva_compra")%>">
+			<label>IVA:</label>
+			<input type = "text" name = "ivaCompra" id = "ivaCompra" >
 		</div>
 		<div>
-			<label>NIT</label> <input type="text" name="nitProveedor"
-				value="<%=res.getString("nit_proveedor")%>">
+			<label>NIT:</label>
+			<input type = "text" name = "nitProveedor" id = "nitProveedor">
 		</div>
 		<div>
-			<label>Nombre</label> <input type="text" name="nombreProducto"
-				value="<%=res.getString("nombre_producto")%>">
+			<label>Nombre:</label>
+			<input type = "text" name = "nombreProducto" id = "nombreProducto" >
 		</div>
 		<div>
-			<label>Precio Compra</label> <input type="text" name="precioCompra"
-				value="<%=res.getString("precio_compra")%>">
+			<label>Precio Compra:</label>
+			<input type = "text" name = "precioCompra" id = "precioCompra">
 		</div>
 		<div>
-			<label>Precio Venta</label> <input type="text" name="precioVenta"
-				value="<%=res.getString("precio_venta")%>">
+			<label>Precio Venta:</label>
+			<input type = "text" name = "precioVenta" id = "precioVenta" >
 		</div>
 		<div>
-			<input class="btningresar" type="submit" Value="Actualizar Producto"> 
-			
+			<button class="btningresar" onclick="location.href='productos.jsp'" type="button" class="">VOLVER</button>
 		</div>
 	</form>
-
-	<%
-	}
-	%>
 
 </body>
 </html>
