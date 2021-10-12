@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class Conexion {
 	static String bd = "tiendagenerica";
-    static String login = "root";
+	static String login = "root";
     static String password = "root";
     static String url = "jdbc:mysql://localhost/"+bd;
     
@@ -13,7 +13,7 @@ public class Conexion {
     public Conexion() {
         try{
            
-           Class.forName("com.mysql.cj.jdbc.Driver");
+           Class.forName("org.mariadb.jdbc.Driver");
            
            connection = DriverManager.getConnection(url,login,password);
            if (connection!=null){

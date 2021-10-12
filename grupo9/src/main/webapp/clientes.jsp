@@ -28,10 +28,10 @@
 				var columna5 = document.createElement("td");
 				columna5.innerHTML = item.telefonoCliente;
 				var columna6 = document.createElement("td");
-				columna7.innerHTML =  "<a href='' onclick ='eliminarCliente("+item.cedulaCliente+")'>Eliminar</a>";
+				columna6.innerHTML =  "<a href='' onclick ='eliminarCliente("+item.cedulaCliente+")'>Eliminar</a>";
 				
 				var columna7 = document.createElement("td");
-				columna6.innerHTML =  "<a href='editarCliente.jsp?cedula="+ item.cedulaCliente + "'>Editar</a>";
+				columna7.innerHTML =  "<a href='editarCliente.jsp?cedula="+ item.cedulaCliente + "'>Editar</a>";
 			
 				
 				lista.appendChild(tr);
