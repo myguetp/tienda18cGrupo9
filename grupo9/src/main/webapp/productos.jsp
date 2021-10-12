@@ -46,6 +46,17 @@
 <body>
 	<jsp:include page="menu.jsp"></jsp:include><br>
 	<h1>Productos</h1><br>
+	
+		<form class="Buscar" action="http://localhost:8080/consultarProducto.jsp" method="get">
+		<div>
+			<label>Buscar Producto</label> <input type="text" name="codigo">
+		</div>
+		<div>
+			<input type="submit" Value="Buscar" class="btnconsultar">
+		
+		</div>
+	</form>
+	
 	<table border ="1" class="centrar">
 		<thead>
 			<tr>
@@ -64,7 +75,5 @@
 	</table>
 	<br>
 	<a class="btnagregar" href = "agregarProducto.jsp">Agregar Producto</a>
-	<a class="btnconsultar" href = "consultarProducto.jsp">Consultar Producto</a>
 </body>
 </html>
-
