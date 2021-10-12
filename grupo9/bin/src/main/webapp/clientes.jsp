@@ -28,7 +28,8 @@
 				var columna6 = document.createElement("td");
 				columna6.innerHTML = "<a href ='editarCliente.jsp?cedula="+item.cedulaCliente+"'>Editar</a>";
 				var columna7 = document.createElement("td");
-				columna7.innerHTML = "<a href ='eliminarCliente?cedula="+item.cedulaCliente+"'>Eliminar</a>";
+				//columna7.innerHTML = "<a href ='eliminarCliente?cedula="+item.cedulaCliente+"'>Eliminar</a>";
+				columna7.innerHTML = "<a href = '' onclick = 'eliminarCliente("+item.cedulaCliente+")'>Eliminar</a>";
 				
 				lista.appendChild(tr);
 				tr.appendChild(columna1);
@@ -41,6 +42,19 @@
 			});
 		}
 	})
+	
+	function eliminarCliente(cedula){
+		var eliminar = $.ajax({
+			type: "GET",
+			url: "http://localhost:8080/eliminarCliente?cedula="+cedula,
+			succes: function(data){
+				
+			}		
+		});
+	}
+	
+	
+	
 </script>
 </head>
 <body>

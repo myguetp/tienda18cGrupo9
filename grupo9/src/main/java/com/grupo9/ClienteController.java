@@ -18,30 +18,27 @@ public class ClienteController {
 			ClienteDAO Dao=new ClienteDAO();
 			Dao.registrarCliente(cliente);
 		}
-		@RequestMapping("/consultarClientes")
-		public ArrayList <ClienteDTO> consultarCliente (int cedula){
+		@RequestMapping("/consultarCliente")
+		public ArrayList <ClienteDTO> consultarCliente (int documento){
 			ClienteDAO Dao=new ClienteDAO();
-			return Dao.consultarCliente(cedula);
+			return Dao.consultarCliente(documento);
 		}
 		@RequestMapping("/listaDeClientes")
 		public ArrayList <ClienteDTO> listaDeClientes(){
 			ClienteDAO Dao=new ClienteDAO();
 			return Dao.listaDeClientes();
-		}
-		@RequestMapping("/eliminarCliente")
-		public void eliminarCliente(int cedula) {
-			ClienteDAO Dao=new ClienteDAO();
-			Dao.eliminarCliente(cedula);
-		}
+		}					
 		
 		@RequestMapping("/editarCliente")
-		public void editarCliente(ClienteDTO cliente){
-			ClienteDAO Dao = new ClienteDAO();
+		public void editarCliente (ClienteDTO cliente) {
+			ClienteDAO Dao=new ClienteDAO();
 			Dao.editarCliente(cliente);
-			
-			
+		}	
+		@RequestMapping("/eliminarCliente")
+		public void eliminarCliente(int cedula) {
+			ClienteDAO Dao = new ClienteDAO();
+			Dao.eliminarCliente(cedula);
 		}
-
 
 }
 
