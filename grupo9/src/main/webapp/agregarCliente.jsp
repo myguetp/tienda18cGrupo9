@@ -24,8 +24,7 @@ function agregarCliente() {
 				
 				}
 	
-	      })
-    
+	      })    
 }
 
 </script>
