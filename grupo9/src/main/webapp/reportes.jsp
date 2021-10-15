@@ -12,19 +12,19 @@
 	<jsp:include page="menu.jsp"></jsp:include><br>
 	<h1>Reportes</h1>
 	<div>
-		<input type="button" Value="Listado de Usuarios" class="btnconsultar" onclick="location.href='reporteUsuarios.jsp'">
+		<input type="button" Value="Listado de Usuarios" class="btnreportes" onclick="location.href='reporteUsuarios.jsp'">
 	</div>
 	<div>
-		<input type="button" Value="Listado de Clientes" class="btnconsultar" onclick="location.href='reporteClientes.jsp'">
+		<input type="button" Value="Listado de Clientes" class="btnreportes" onclick="location.href='reporteClientes.jsp'">
 	</div>
 	<div>
-		<input type="button" Value="Listado de Proveedores" class="btnconsultar" onclick="location.href='reporteProveedores.jsp'">
+		<input type="button" Value="Listado de Proveedores" class="btnreportes" onclick="location.href='reporteProveedores.jsp'">
 	</div>
 	<div>
-		<input type="button" Value="Listado de Productos" class="btnconsultar" onclick="location.href='reporteProductos.jsp'">
+		<input type="button" Value="Listado de Productos" class="btnreportes" onclick="location.href='reporteProductos.jsp'">
 	</div>
 	<div>
-		<input type="button" Value="Total Ventas Por Cliente" class="btnconsultar" onclick="location.href='reporteVentasXcliente.jsp'">
+		<input type="button" Value="Total Ventas Por Cliente" class="btnreportes" onclick="location.href='reporteVentasXcliente.jsp'">
 	</div>
 
 </body>

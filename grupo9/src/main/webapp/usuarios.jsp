@@ -82,7 +82,7 @@
 				<th>Cedula</th>
 				<th>Correo</th>
 				<th>Nombre</th>
-				<th>ContraseÃ±a</th>
+				<th>Contraseña</th>
 				<th>Usuario</th>
 				<th>Editar</th>
 				<th>Eliminar</th>

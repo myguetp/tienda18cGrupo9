@@ -7,24 +7,6 @@
     box-sizing: border-box;
 }
 
-.reportes{
-	margin: auto;
-	background-color: #808080;
-	width: 60%;
-	border: 1px solid black;
-	
-	
-	
-}
-
-.reportes td{
-	
-	border: 1px solid black;
-	color:#000000;
-	background-color: #ffffff;
-	font-weight:600;
-
-	}
 #formulario{
 	margin: 0 auto;
 	width: 400px;
@@ -121,8 +103,6 @@ body h1 {
 	cursor: pointer;
 }
 
-  
-
 #botones input:hover{transform: translatey(2px);}
 #botones input:active{transform: translatey(5px);}
 
@@ -145,7 +125,6 @@ body h1 {
     border-radius: 3px;
 }
 
-
 th{
 	color:#fff;
 	background-color: #252525;
@@ -163,4 +142,31 @@ th{
     background-color:#DAE3E0;
 }
 
+.btnreportes {
+	margin: auto;
+	text-decoration: none;
+	margin-top: 20px;
+	width:20%;
+	padding: 5px;
+	font-weight: 200;
+	font-size: 18px;
+	color: #ffffff;
+    background-color: #21201F;
+    border-radius: 5px;
+	cursor: pointer;
+}
+.reportes{
+	margin: auto;
+	background-color: #808080;
+	width: 60%;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
 
+.reportes td{
+	
+	border: 1px solid black;
+	color:#000000;
+	background-color: #ffffff;
+	font-weight:600;
+	}
