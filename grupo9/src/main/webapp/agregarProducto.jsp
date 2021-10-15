@@ -58,7 +58,7 @@
 			<input type = "text" name = "precioVenta" id = "precioVenta" >
 		</div>
 		<div>
-			<input class="btningresar" type = "submit">
+			<input class="btningresar" type = "submit" value="Agregar Nuevo Produto">
 		</div>
 	</form>
 	<a href="productos.jsp">Volver</a><br>

@@ -49,7 +49,7 @@
 	
 		<form class="Buscar" action="http://localhost:8080/consultarProducto.jsp" method="get">
 		<div>
-			<label>Buscar Producto</label> <input type="text" name="codigo">
+			<label>Consultar Producto</label> <input type="text" name="codigo">
 		</div>
 		<div>
 			<input type="submit" Value="Buscar" class="btnconsultar">

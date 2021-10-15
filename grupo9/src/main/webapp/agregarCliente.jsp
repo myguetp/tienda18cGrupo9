@@ -55,7 +55,7 @@ function agregarCliente() {
 		<input type = "text" name="telefonoCliente" id="telefono">	
 	</div>
 		<div>
-			<input class="btningresar" type = "submit" Value="Crear" >
+			<input class="btningresar" type = "submit" Value="Agregar Nuevo Cliente" >
 		</div>
 	</form>
 	<a href="clientes.jsp">Volver</a><br>	

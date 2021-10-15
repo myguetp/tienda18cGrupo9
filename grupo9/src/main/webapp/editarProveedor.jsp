@@ -65,7 +65,7 @@
 			<input type = "text" name = "telefonoProveedor" id="telefonoProveedor">
 		</div>
 		<div>
-			<input class="btningresar" type = "submit">
+			<input class="btningresar" type = "submit" value="Actualizar Proveedor">
 		</div>
 	</form>	
 	<a href="proveedores.jsp">Volver</a><br>

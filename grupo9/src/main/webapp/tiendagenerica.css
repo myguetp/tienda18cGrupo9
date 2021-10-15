@@ -6,6 +6,25 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+.reportes{
+	margin: auto;
+	background-color: #808080;
+	width: 60%;
+	border: 1px solid black;
+	
+	
+	
+}
+
+.reportes td{
+	
+	border: 1px solid black;
+	color:#000000;
+	background-color: #ffffff;
+	font-weight:600;
+
+	}
 #formulario{
 	margin: 0 auto;
 	width: 400px;
@@ -143,3 +162,5 @@ th{
     padding: 1%;
     background-color:#DAE3E0;
 }
+
+

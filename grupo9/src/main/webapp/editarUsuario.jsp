@@ -76,7 +76,7 @@ function editarUsuario() {
 		<input type = "text" name="usuario" id="usuario">	
 	</div>
 		<div>
-			<input class="btningresar" type="submit" Value="Actualizar Datos de Usuario">
+			<input class="btningresar" type="submit" Value="Actualizar Usuario">
 		</div>
 	</form>
 <a href="usuarios.jsp">Volver</a><br>

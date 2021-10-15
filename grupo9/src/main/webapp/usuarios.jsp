@@ -27,13 +27,12 @@
 						var columna5 = document.createElement("td");
 						columna5.innerHTML = item.usuario;
 						
-						
 						var columna6 = document.createElement("td");
-						columna6.innerHTML = "<a href='' onclick ='eliminarUsuario("+item.cedulaUsuario+")'>Eliminar</a>";
-				
+						columna6.innerHTML = "<a href='editarUsuario.jsp?cedula="+ item.cedulaUsuario + "'>Editar</a>";
+						
 						var columna7 = document.createElement("td");
-						columna7.innerHTML = "<a href='editarUsuario.jsp?cedula="+ item.cedulaUsuario + "'>Editar</a>";
-
+						columna7.innerHTML = "<a href='' onclick ='eliminarUsuario("+item.cedulaUsuario+")'>Eliminar</a>";
+				
 						lista.appendChild(tr);
 						tr.appendChild(columna1);
 						tr.appendChild(columna2);
@@ -42,7 +41,6 @@
 						tr.appendChild(columna5);
 						tr.appendChild(columna6);
 						tr.appendChild(columna7);
-						
 					}
 					
 					);
@@ -53,7 +51,7 @@
 			
 		
 	function eliminarUsuario(cedula) {
-		alert("Se va a eliminar el usuario");
+		
 		var eliminar = $.ajax({
 			type : "get",
 			url : "http://localhost:8080/eliminarUsuario?cedula="+cedula,
@@ -61,8 +59,7 @@
 				window.location.replace("http://localhost:8080/usuarios.jsp");
 			}
 		})
-		alert("usuario eliminado");
-		
+		alert("El Usuario Sera ELIMINADO");
 	}
 </script>
 </head>
@@ -71,7 +68,7 @@
 	<h1>Usuarios</h1><br>
 	<form class="Buscar" action="http://localhost:8080/consultarUsuario.jsp" method="get">
 		<div>
-			<label>Buscar usuario</label> <input type="text" name="cedula">
+			<label>Consultar Usuario</label> <input type="text" name="cedula">
 		</div>
 		<div>
 			<input type="submit" Value="Buscar" class="btnconsultar">
@@ -87,8 +84,8 @@
 				<th>Nombre</th>
 				<th>Contraseña</th>
 				<th>Usuario</th>
-				<th>Eliminar</th>
 				<th>Editar</th>
+				<th>Eliminar</th>
 			</tr>
 		</thead>
 		<tbody id="myTable">

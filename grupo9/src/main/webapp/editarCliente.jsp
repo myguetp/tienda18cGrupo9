@@ -75,7 +75,7 @@ function editarCliente() {
 		<input type = "text" name="telefonoCliente" id="telefono">	
 	</div>
 		<div>
-			<input class="btningresar" type="submit" Value="Actualizar">
+			<input class="btningresar" type="submit" Value="Actualizar Cliente">
 		</div>
 	</form>
 <a href="Clientes.jsp">Volver</a><br>
