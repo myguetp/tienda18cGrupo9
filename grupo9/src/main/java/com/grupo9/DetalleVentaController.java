@@ -12,9 +12,11 @@ import com.grupo9.DTO.DetalleVentaDTO;
 public class DetalleVentaController {
 	
 	@RequestMapping("/registrarDetalleVenta")
-	public void registrarDetalleVenta(DetalleVentaDTO detalleVenta) {
-		DetalleVentaDAO Dao = new DetalleVentaDAO();
-		Dao.registrarDetalleVenta(detalleVenta);
+	public void registrarDetalleVenta(ArrayList<DetalleVentaDTO> detalleVentas) {
+		for(DetalleVentaDTO detalleVenta: detalleVentas) {
+			DetalleVentaDAO Dao = new DetalleVentaDAO();
+			Dao.registrarDetalleVenta(detalleVenta);
+		}
 	}
 	
 	@RequestMapping("/consultarDetalleVenta")
@@ -40,5 +42,7 @@ public class DetalleVentaController {
 		DetalleVentaDAO Dao = new DetalleVentaDAO();
 		Dao.editarDetalleVenta(detalleVenta);
 	}
+	
+	
 
 }
