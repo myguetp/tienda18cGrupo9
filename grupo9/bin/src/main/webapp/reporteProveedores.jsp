@@ -46,7 +46,7 @@
 	<h1>Listado de Proveedores</h1><br>
 	
 	
-	<table border ="1" class="centrar">
+	<table border ="1" class="reportes">
 		<thead>
 			<tr>
 				<th>NIT</th>

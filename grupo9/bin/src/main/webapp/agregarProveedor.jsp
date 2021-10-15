@@ -51,7 +51,7 @@
 		<input type = "text" name="telefonoProveedor" id="telefonoProveedor" required>	
 	</div>
 	<div>
-		<input class="btningresar" type = "submit" Value="Enviar">	
+		<input class="btningresar" type = "submit" Value="Agregar Nuevo Proveedor">	
 	</div>
 </form>
 	<a href="proveedores.jsp">Volver</a><br>

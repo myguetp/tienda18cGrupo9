@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Reporte listado usuarios</title>
+
 <link rel="stylesheet" type="text/css" href="tiendagenerica.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -46,7 +47,7 @@
 	<h1>Listado de Usuarios</h1><br>
 	
 	
-	<table border ="1" class="centrar">
+	<table  class="reportes">
 		<thead>
 			<tr>
 				<th>Cedula</th>
@@ -62,6 +63,6 @@
 	</table>
 	<br>
 	<a class="btnagregar" href = "reportes.jsp">Volver</a>
-	
+
 </body>
 </html>

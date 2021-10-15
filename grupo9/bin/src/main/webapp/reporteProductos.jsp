@@ -44,7 +44,7 @@
 	<jsp:include page="menu.jsp"></jsp:include><br>
 	<h1>Listado de Productos</h1><br>
 	
-	<table border ="1" class="centrar">
+	<table border ="1" class="reportes">
 		<thead>
 			<tr>
 				<th>Codigo</th>

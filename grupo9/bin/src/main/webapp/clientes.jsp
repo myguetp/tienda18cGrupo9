@@ -27,11 +27,14 @@
 				columna4.innerHTML = item.nombreCliente;
 				var columna5 = document.createElement("td");
 				columna5.innerHTML = item.telefonoCliente;
+				
 				var columna6 = document.createElement("td");
-				columna6.innerHTML =  "<a href='' onclick ='eliminarCliente("+item.cedulaCliente+")'>Eliminar</a>";
+				columna6.innerHTML =  "<a href='editarCliente.jsp?cedula="+ item.cedulaCliente + "'>Editar</a>";
 				
 				var columna7 = document.createElement("td");
-				columna7.innerHTML =  "<a href='editarCliente.jsp?cedula="+ item.cedulaCliente + "'>Editar</a>";
+				columna7.innerHTML =  "<a href='' onclick ='eliminarCliente("+item.cedulaCliente+")'>Eliminar</a>";
+				
+				
 			
 				
 				lista.appendChild(tr);
@@ -56,8 +59,7 @@
 				
 			}
 		})
-		
-		
+		alert("El Cliente sera ELIMINADO");
 	}
 </script>
 </head>
@@ -66,7 +68,7 @@
 	<h1>Clientes</h1><br>
 	<form class="Buscar" action="http://localhost:8080/consultarCliente.jsp" method="get">
 		<div>
-			<label>Buscar Cliente</label> <input type="text" name="cedula">
+			<label>Consultar Cliente</label> <input type="text" name="cedula">
 		</div>
 		<div>
 			<input type="submit" Value="Buscar" class="btnconsultar">
@@ -82,8 +84,8 @@
 				<th>Email</th>
 				<th>Nombre</th>
 				<th>Telefono</th>
-				<th>Eliminar</th>
-				<th>Editar</th>				
+				<th>Editar</th>
+				<th>Eliminar</th>				
 			</tr>
 		</thead>
 		<tbody id="myTable">

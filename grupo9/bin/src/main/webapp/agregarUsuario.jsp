@@ -58,7 +58,7 @@ function agregarUsuario() {
 		<input type = "text" name="usuario" id="usuario">	
 	</div>
 		<div>
-			<input class="btningresar" type = "submit" Value="Crear Nuevo Usuario" >
+			<input class="btningresar" type = "submit" Value="Agregar Nuevo Usuario" >
 		</div>
 	</form>
 	<a href="usuarios.jsp">Volver</a><br>	

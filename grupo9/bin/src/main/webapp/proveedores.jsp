@@ -49,7 +49,8 @@
 			success: function(data){
 				
 			}
-		});
+		})
+		alert("El Proveedor sera ELIMINADO");
 	}
 </script>
 </head>
@@ -58,10 +59,10 @@
 	<h1>Proveedores</h1><br>
 	<form class="Buscar" action="http://localhost:8080/consultarProveedor.jsp" method="get">
 		<div>
-			<label>Buscar Proveedor</label> <input type="text" name="nit">
+			<label>Consultar Proveedor</label> <input type="text" name="nit">
 		</div>
 		<div>
-			<input type="submit" Value="Consultar" class="btnconsultar">
+			<input type="submit" Value="Buscar" class="btnconsultar">
 		
 		</div>
 	</form>
