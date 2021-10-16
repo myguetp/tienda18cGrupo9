@@ -8,12 +8,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <script type="text/javascript">
-	$(document).ready(function(){
+	$(document).ready(function(){		
 		
 		let infProd = [];
 		
 		$("#confVenta").click(function(){
-			//alert("Confirmado");
+			
 			var request = $.ajax({
 				url: "http://localhost:8080/registrarVenta?codigo_venta="+"0"+"&cedula_cliente="+$("#CEDULA").val()+"&cedula_usuario="+"1019132443"+"&total_venta="+$("#TVenta").val()+"&iva_venta="+$("#TI").val()+"&valor_venta="+$("#TIva").val(),
 				method: "get",
@@ -22,46 +22,41 @@
 			});
 			
 			request.done(function(respuesta){
-				var datos = JSON.stringify([
-					{
-						"codigo_detalle_venta":"0",
-						"cantidad_producto":$("#CANTIDAD1").val(),
-						"codigo_producto":$("#COD_PRODUCTO1").val(),
-						"codigo_venta":respuesta.codigo_venta,
-						"valor_total":$("#VT1").val()/$("#CANTIDAD1").val(),
-						"valor_venta":$("#VT1").val()+$("#IVA_PRODUCTO1").val(),
-						"valor_iva":$("#IC1").val()
-					},
-					{
-						"codigo_detalle_venta":"0",
-						"cantidad_producto":$("#CANTIDAD2").val(),
-						"codigo_producto":$("#COD_PRODUCTO2").val(),
-						"codigo_venta":respuesta.codigo_venta,
-						"valor_total":$("#VT2").val()/$("#CANTIDAD2").val(),
-						"valor_venta":$("#VT2").val()+$("#IVA_PRODUCTO2").val(),
-						"valor_iva":$("#IC2").val()
-					},
-					{
-						"codigo_detalle_venta":"0",
-						"cantidad_producto":$("#CANTIDAD3").val(),
-						"codigo_producto":$("#COD_PRODUCTO3").val(),
-						"codigo_venta":respuesta.codigo_venta,
-						"valor_total":$("#VT3").val()/$("#CANTIDAD3").val(),
-						"valor_venta":$("#VT3").val()+$("#IVA_PRODUCTO3").val(),
-						"valor_iva":$("#IC3").val()
-					}
-				]);
-				var request = $.ajax({
-					url: "http://localhost:8080/registrarDetalleVenta",
-					method: "get",
-					data: datos,
-					dataType: "json",
-					contentType: 'application/json'
-				});
 				
-				request.done(function(respuesta){
-					
-				});
+			});
+			
+			//Detalle Productos
+			var request = $.ajax({
+				url: "http://localhost:8080/registrarDetalleVenta?codigo_detalle_venta="+"0"+"&cantidad_producto="+$("#CANTIDAD1").val()+"&codigo_producto="+$("#COD_PRODUCTO1").val()+"&codigo_venta="+"1"+"&valor_total="+$("#VT1").val()/$("#CANTIDAD1").val()+"&valor_venta="+$("#VT1").val()+$("#IVA_PRODUCTO1").val()+"&valor_iva="+$("#IC1").val(),
+				method: "get",
+				dataType: "json",
+				contentType: 'application/json'
+			});
+			
+			request.done(function(respuesta){
+				
+			});
+			
+			var request = $.ajax({
+				url: "http://localhost:8080/registrarDetalleVenta?codigo_detalle_venta="+"0"+"&cantidad_producto="+$("#CANTIDAD2").val()+"&codigo_producto="+$("#COD_PRODUCTO2").val()+"&codigo_venta="+"1"+"&valor_total="+$("#VT2").val()/$("#CANTIDAD2").val()+"&valor_venta="+$("#VT2").val()+$("#IVA_PRODUCTO2").val()+"&valor_iva="+$("#IC2").val(),
+				method: "get",
+				dataType: "json",
+				contentType: 'application/json'
+			});
+			
+			request.done(function(respuesta){
+				
+			});
+			
+			var request = $.ajax({
+				url: "http://localhost:8080/registrarDetalleVenta?codigo_detalle_venta="+"0"+"&cantidad_producto="+$("#CANTIDAD3").val()+"&codigo_producto="+$("#COD_PRODUCTO3").val()+"&codigo_venta="+"1"+"&valor_total="+$("#VT3").val()/$("#CANTIDAD3").val()+"&valor_venta="+$("#VT3").val()+$("#IVA_PRODUCTO3").val()+"&valor_iva="+$("#IC3").val(),
+				method: "get",
+				dataType: "json",
+				contentType: 'application/json'
+			});
+			
+			request.done(function(respuesta){
+				
 			});
 			
 		});

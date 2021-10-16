@@ -6,17 +6,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.grupo9.DAO.DetalleVentaDAO;
+import com.grupo9.DAO.VentaDAO;
 import com.grupo9.DTO.DetalleVentaDTO;
+import com.grupo9.DTO.VentaDTO;
 
 @RestController
 public class DetalleVentaController {
 	
 	@RequestMapping("/registrarDetalleVenta")
-	public void registrarDetalleVenta(ArrayList<DetalleVentaDTO> detalleVentas) {
-		for(DetalleVentaDTO detalleVenta: detalleVentas) {
-			DetalleVentaDAO Dao = new DetalleVentaDAO();
-			Dao.registrarDetalleVenta(detalleVenta);
-		}
+	public void registrarDetalleVenta(DetalleVentaDTO detalleVenta) {
+		DetalleVentaDAO Dao = new DetalleVentaDAO();
+		Dao.registrarDetalleVenta(detalleVenta);
 	}
 	
 	@RequestMapping("/consultarDetalleVenta")

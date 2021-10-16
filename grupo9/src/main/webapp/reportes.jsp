@@ -26,6 +26,9 @@
 	<div>
 		<input type="button" Value="Total Ventas Por Cliente" class="btnreportes" onclick="location.href='reporteVentasXcliente.jsp'">
 	</div>
+	<div>
+		<input type="button" Value="Detalle Ventas" class="btnreportes" onclick="location.href='reporteDetalleVentas.jsp'">
+	</div>
 
 </body>
 </html>
