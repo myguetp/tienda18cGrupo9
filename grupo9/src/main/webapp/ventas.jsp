@@ -1,3 +1,5 @@
+<%@page import="com.grupo9.DAO.Conexion"%>
+<%@ page import ="java.sql.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -15,7 +17,7 @@
 		$("#confVenta").click(function(){
 			
 			var request = $.ajax({
-				url: "http://localhost:8080/registrarVenta?codigo_venta="+"0"+"&cedula_cliente="+$("#CEDULA").val()+"&cedula_usuario="+"1019132443"+"&total_venta="+$("#TVenta").val()+"&iva_venta="+$("#TI").val()+"&valor_venta="+$("#TIva").val(),
+				url: "http://localhost:8080/registrarVenta?codigo_venta="+$("#CONSECUTIVO").val()+"&cedula_cliente="+$("#CEDULA").val()+"&cedula_usuario="+"2"+"&total_venta="+$("#TVenta").val()+"&iva_venta="+$("#TI").val()+"&valor_venta="+$("#TIva").val(),
 				method: "get",
 				dataType: "json",
 				contentType: 'application/json'
@@ -27,7 +29,7 @@
 			
 			//Detalle Productos
 			var request = $.ajax({
-				url: "http://localhost:8080/registrarDetalleVenta?codigo_detalle_venta="+"0"+"&cantidad_producto="+$("#CANTIDAD1").val()+"&codigo_producto="+$("#COD_PRODUCTO1").val()+"&codigo_venta="+"1"+"&valor_total="+$("#VT1").val()/$("#CANTIDAD1").val()+"&valor_venta="+$("#VT1").val()+$("#IVA_PRODUCTO1").val()+"&valor_iva="+$("#IC1").val(),
+				url: "http://localhost:8080/registrarDetalleVenta?codigo_detalle_venta="+"0"+"&cantidad_producto="+$("#CANTIDAD1").val()+"&codigo_producto="+$("#COD_PRODUCTO1").val()+"&codigo_venta="+$("#CONSECUTIVO").val()+"&valor_total="+$("#VT1").val()/$("#CANTIDAD1").val()+"&valor_venta="+$("#VT1").val()+$("#IVA_PRODUCTO1").val()+"&valor_iva="+$("#IC1").val(),
 				method: "get",
 				dataType: "json",
 				contentType: 'application/json'
@@ -38,7 +40,7 @@
 			});
 			
 			var request = $.ajax({
-				url: "http://localhost:8080/registrarDetalleVenta?codigo_detalle_venta="+"0"+"&cantidad_producto="+$("#CANTIDAD2").val()+"&codigo_producto="+$("#COD_PRODUCTO2").val()+"&codigo_venta="+"1"+"&valor_total="+$("#VT2").val()/$("#CANTIDAD2").val()+"&valor_venta="+$("#VT2").val()+$("#IVA_PRODUCTO2").val()+"&valor_iva="+$("#IC2").val(),
+				url: "http://localhost:8080/registrarDetalleVenta?codigo_detalle_venta="+"0"+"&cantidad_producto="+$("#CANTIDAD2").val()+"&codigo_producto="+$("#COD_PRODUCTO2").val()+"&codigo_venta="+$("#CONSECUTIVO").val()+"&valor_total="+$("#VT2").val()/$("#CANTIDAD2").val()+"&valor_venta="+$("#VT2").val()+$("#IVA_PRODUCTO2").val()+"&valor_iva="+$("#IC2").val(),
 				method: "get",
 				dataType: "json",
 				contentType: 'application/json'
@@ -49,7 +51,7 @@
 			});
 			
 			var request = $.ajax({
-				url: "http://localhost:8080/registrarDetalleVenta?codigo_detalle_venta="+"0"+"&cantidad_producto="+$("#CANTIDAD3").val()+"&codigo_producto="+$("#COD_PRODUCTO3").val()+"&codigo_venta="+"1"+"&valor_total="+$("#VT3").val()/$("#CANTIDAD3").val()+"&valor_venta="+$("#VT3").val()+$("#IVA_PRODUCTO3").val()+"&valor_iva="+$("#IC3").val(),
+				url: "http://localhost:8080/registrarDetalleVenta?codigo_detalle_venta="+"0"+"&cantidad_producto="+$("#CANTIDAD3").val()+"&codigo_producto="+$("#COD_PRODUCTO3").val()+"&codigo_venta="+$("#CONSECUTIVO").val()+"&valor_total="+$("#VT3").val()/$("#CANTIDAD3").val()+"&valor_venta="+$("#VT3").val()+$("#IVA_PRODUCTO3").val()+"&valor_iva="+$("#IC3").val(),
 				method: "get",
 				dataType: "json",
 				contentType: 'application/json'
@@ -158,7 +160,23 @@
 				<td><label for="CLIENTE">Cliente</label></td>
 				<td><input type="text" id="CLIENTE"></td>
 				<td><label for="CONSECUTIVO">Consecutivo</label></td>
-				<td><input type="text" id="CONSECUTIVO"></td>
+				<%
+	//int cedula = Integer.parseInt(request.getParameter("cedula"));
+	Conexion conex = new Conexion();
+	int incremeto = 1;
+	PreparedStatement consulta = conex.getConnection().prepareStatement("select MAX(codigo_venta) as codigo_venta from ventas");
+	ResultSet res = consulta.executeQuery();
+
+	while (res.next()) {
+	%>
+				<td><input type="text" id="CONSECUTIVO" value="<%=res.getInt("codigo_venta")+incremeto%>"></td>
+				<%
+	}
+
+	res.close();
+    consulta.close();
+    conex.desconectar();
+	%>
 			</tr>
 			<tr>
 			  	<td></td>

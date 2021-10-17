@@ -1,12 +1,11 @@
 package com.grupo9.DAO;
 import java.sql.*;
 
-
 public class Conexion {
 	static String bd = "tiendagenerica";
 	static String login = "root";
-    static String password = "root";
-    static String url = "jdbc:mysql://localhost/"+bd;
+        static String password = "root";
+        static String url = "jdbc:mysql://localhost/"+bd;
     
     Connection connection = null;
     
