@@ -42,5 +42,10 @@ public class VentaController {
 		
 		
 	}
+	@RequestMapping("/listaDeVenta2")
+	public void listaDeVenta2(VentaDTO venta) {
+		VentaDAO Dao = new VentaDAO();
+		Dao.listaDeVenta2();
+	}
 
 }

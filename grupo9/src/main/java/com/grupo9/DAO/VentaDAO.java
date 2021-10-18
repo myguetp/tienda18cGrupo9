@@ -119,5 +119,34 @@ PreparedStatement preparedStatement;
 	
 	
 	
+	public ArrayList<VentaDTO> listaDeVenta2(){
+		ArrayList<VentaDTO> miVenta2 = new ArrayList<VentaDTO>();
+		Conexion conex = new Conexion();
+		
+		try {
+			PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM ventas");
+			ResultSet res = consulta.executeQuery();
+			while(res.next()) {
+				VentaDTO venta2 = new VentaDTO();
+				venta2.setCodigo_venta(res.getInt("codigo_venta"));
+				venta2.setCedula_cliente(res.getInt("cedula_cliente"));
+				venta2.setCedula_usuario(res.getInt("cedula_usuario"));
+				venta2.setIva_venta(res.getDouble("iva_venta"));
+				venta2.setTotal_venta(res.getDouble("total_venta"));
+				venta2.setValor_venta(res.getDouble("valor_venta"));
+				
+				miVenta2.add(venta2);
+					}
+					res.close();
+					consulta.close();
+					conex.desconectar();
+		
+			}
+		catch(Exception e) {
+			
+			System.out.println(e.getMessage());
+		}
+		return miVenta2;
+		}
 
 }

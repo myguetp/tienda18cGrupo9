@@ -6,7 +6,12 @@
     margin: 0;
     box-sizing: border-box;
 }
+.ventas{
+	border: 1px solid black;
+	text-align: center;
+	margin: 0px;
 
+}
 #formulario{
 	margin: 0 auto;
 	width: 400px;
@@ -169,4 +174,6 @@ th{
 	color:#000000;
 	background-color: #ffffff;
 	font-weight:600;
-	}
+}
+
+
