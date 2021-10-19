@@ -10,20 +10,19 @@
 <link rel="stylesheet" type="text/css" href="tiendagenerica.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style type="text/css">
-
-
 .ventas{
 	
+	 border: 1px solid black;
 	text-align: center;
-    width: 100%;	
-    border:3px solid red;	
+     width:90%;
+	padding: 0%;
+	margin-left: -300px;
+	
+	
 }
 
-.ventabla{
-margin:auto;
-}
 .ventas td{
- 
+ border: 1px solid black;
  text-align:center;
  padding: 0%;
 }
@@ -199,9 +198,9 @@ margin:0%;
 
 <body>
 <jsp:include page="menu.jsp"></jsp:include><br>
-	<form class="ventas">
+	<form  >
 	<h1>Ventas</h1>
-		<table class="ventabla">
+		<table class=ventas >
 			<tr>
 				<td><label for="CEDULA">Cedula</label></td>
 				<td><input type="text" id="CEDULA"></td>
@@ -211,7 +210,7 @@ margin:0%;
 				<td><input type="text" id="CLIENTE"></td>
 				<td><label for="CONSECUTIVO">Consecutivo</label></td>
 				<%
-	
+	//int cedula = Integer.parseInt(request.getParameter("cedula"));
 	Conexion conex = new Conexion();
 	int incremeto = 1;
 	PreparedStatement consulta = conex.getConnection().prepareStatement("select MAX(codigo_venta) as codigo_venta from ventas");

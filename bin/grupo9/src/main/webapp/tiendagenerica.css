@@ -1,0 +1,179 @@
+@charset "ISO-8859-1";
+/*importando fuentes de google*/
+@import url('https://fonts.googleapis.com/css?family=Abel|Playfair+Display|Vibur');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.ventas{
+	border: 1px solid black;
+	text-align: center;
+	margin: 0px;
+
+}
+#formulario{
+	margin: 0 auto;
+	width: 400px;
+	margin-top: 20px;
+	padding: 20px;
+}
+#formulario label{
+	float: left;
+	width: 100px;
+}
+
+body {
+    background-color: #DAE3E0;
+	background-attachment: fixed;
+  	background-repeat: no-repeat;
+
+    font-family: 'Vibur', cursive;
+    font-family: 'Abel', sans-serif;
+	opacity: .90;
+}
+
+form {
+    width: 450px;
+    min-height: 500px;
+    height: auto;
+    border-radius: 5px;
+    margin: auto;
+    /*box-shadow: 0 9px 100px rgb(128, 255, 255);*/
+    padding: 1%;
+    background-color: #DAE3E0;
+}
+
+body {
+    margin: 2% auto 10% auto;
+    text-align: center;
+}
+body h1 {
+    font-size: 190%;
+    font-family: 'Playfair Display', serif;
+    color: #3e403f;
+    text-transform: uppercase;
+}
+
+.campos{
+	margin-top: 15px;
+	font-size: 120%;
+}
+
+.btningresar {
+	margin-top: 30px;
+	margin-left: 90px;
+	padding: 5px;
+	font-size: 16px;
+	color: #ffffff;
+    background-color: #21201F;
+    border-radius: 3px;
+	cursor: pointer;
+}
+
+.btncancelar {
+	margin-top: 30px;
+	margin-left: 30px;
+	padding: 5px;
+	font-size: 16px;
+	color: #ffffff;
+    background-color: #21201F;
+    border-radius: 3px;
+	cursor: pointer;
+}
+
+.btnagregar {
+	text-decoration: none;
+	margin-top: 40px;
+	margin-left: 38px;
+	padding: 5px;
+	font-weight: 200;
+	font-size: 18px;
+	color: #ffffff;
+    background-color: #21201F;
+    border-radius: 3px;
+	cursor: pointer;
+}
+
+.btnconsultar {
+	text-decoration: none;
+	margin-top: 40px;
+	margin-left: 10px;
+	padding: 5px;
+	font-weight: 200;
+	font-size: 18px;
+	color: #ffffff;
+    background-color: #21201F;
+    border-radius: 3px;
+	cursor: pointer;
+}
+
+#botones input:hover{transform: translatey(2px);}
+#botones input:active{transform: translatey(5px);}
+
+#tabla {
+	text-align: center;
+}
+
+.centrar{
+	margin: auto;
+
+}
+
+.botonmenu {
+	text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #21201F;
+    border-radius: 3px;
+}
+
+th{
+	color:#fff;
+	background-color: #252525;
+	font-weight: 500;
+}
+
+.Buscar{
+	 width: 450px;
+    min-height: 100px;
+    height: auto;
+    border-radius: 5px;
+    margin: auto;
+    /*box-shadow: 0 9px 100px rgb(128, 255, 255);*/
+    padding: 1%;
+    background-color:#DAE3E0;
+}
+
+.btnreportes {
+	margin: auto;
+	text-decoration: none;
+	margin-top: 20px;
+	width:20%;
+	padding: 5px;
+	font-weight: 200;
+	font-size: 18px;
+	color: #ffffff;
+    background-color: #21201F;
+    border-radius: 5px;
+	cursor: pointer;
+}
+.reportes{
+	margin: auto;
+	background-color: #808080;
+	width: 60%;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.reportes td{
+	
+	border: 1px solid black;
+	color:#000000;
+	background-color: #ffffff;
+	font-weight:600;
+}
+
+
