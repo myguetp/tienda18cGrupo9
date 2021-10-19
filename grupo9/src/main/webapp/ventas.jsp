@@ -16,7 +16,7 @@
 	
 	text-align: center;
     width: 100%;	
-    border:3px solid red;	
+    	
 }
 
 .ventabla{
@@ -200,7 +200,7 @@ margin:0%;
 <body>
 <jsp:include page="menu.jsp"></jsp:include><br>
 	<form class="ventas">
-	<h1>Ventas</h1>
+	<h1>Ventas</h1><br>
 		<table class="ventabla">
 			<tr>
 				<td><label for="CEDULA">Cedula</label></td>
